@@ -1,7 +1,7 @@
-
-.. figure:: tag.jpg
+..
+  .. figure:: tag.jpg
    :scale: 57 %
-
+..
    Found in Via Notari, Pisa; (c) Roberto Di Remigio.
 
 
@@ -12,19 +12,17 @@ News and notifications
 
 
 News about planned/unplanned downtime, changes in hardware, and important
-changes in software will be published on the HPC UiT twitter account
-`<https://twitter.com/hpc_uit>`_ and on the login screen of stallo.
+changes in software will be published on ths documentation and on the login screen of the clusters.
 For more information on the different situations see below.
 
 
 System status and activity
 --------------------------
 
-You can get a quick overview of the system load on Stallo on the
-`Sigma2 hardware page <https://www.sigma2.no/hardware/status>`_.
+You can get a quick overview of the system load on Stallo on the (NEW LINK).
 More information on the system load, queued jobs, and node states can
-be found on the `jobbrowser page <http://stallo-login2.uit.no/slurmbrowser/html/squeue.html>`_
-(only visible from within the UiT network).
+be found on the (NEW LINK)
+(only visible from within the NTNU network).
 
 
 Planned/unplanned downtime

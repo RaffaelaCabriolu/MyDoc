@@ -25,7 +25,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: Getting help
-
+..
    help/contact
    help/writing-support-requests
    help/faq
@@ -37,18 +37,19 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: clusters
-
-   clusters/shutdown
+   
    clusters/Old
    clusters/New
-   clusters/uit-guidelines
+
+.. 
+  clusters/uit-guidelines
 
 
 .. Account section
 .. toctree::
    :maxdepth: 1
    :caption: Account
-
+..
    account/account
    account/login
    account/accounting
@@ -80,7 +81,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: Software
-
+..
    software/applications
    software/modules
    software/python_r_perl
@@ -98,7 +99,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: Storage
-
+..
    storage/storage
    storage/file_transfer
    storage/lustre-performance
@@ -108,7 +109,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: Code development
-
+..
    development/compilers
    development/environment
    development/optimization

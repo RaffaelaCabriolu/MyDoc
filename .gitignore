@@ -1,0 +1,5 @@
+_build/
+venv/
+*~
+.DS_Store
+/home/raffa/Dropbox/Sphinx_dir/NTNUcluster/hpc-Physicsdoc

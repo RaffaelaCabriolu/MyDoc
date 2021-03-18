@@ -3,13 +3,12 @@
 Contact
 =======
 
-If you need help, please file a support request via support@metacenter.no, and
+If you need help, please file a support request via support@metacenter.no (LINK), and
 our local team of experts will try to assist you as soon as possible. Please
 state in the email that the request is about Stallo.
 
-.. image:: rtfm.png
-
-Credit: https://xkcd.com/293/
+..
+  .. image:: rtfm.png    Credit: https://xkcd.com/293/
 
 
 Postal address
@@ -17,10 +16,8 @@ Postal address
 
 .. code-block:: none
 
-  Seksjon for digital forskningstjeneste/HPC
-  Nofima
-  Muninbakken 9-13
-  UiT Norges Arktiske Universitet
-  9037 Tromsø
+  NTNU 
+  9037 Trondheim
 
-Find us on `Mazemap <https://use.mazemap.com/?v=1&campusid=5&desttype=point&dest=18.97468,69.68186,3&zoom=17>`_
+..
+  Find us on `Mazemap <https://use.mazemap.com/?v=1&campusid=5&desttype=point&dest=18.97468,69.68186,3&zoom=17>`_

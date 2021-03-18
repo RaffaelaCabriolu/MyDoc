@@ -1,14 +1,14 @@
-.. _about_stallo:
+.. _about_OLD:
 
-============
-About Stallo
-============
+=========
+About OLD
+=========
 
 
 Resource description
 ====================
 
-Key numbers about the Stallo cluster: compute nodes, node interconnect,
+Key numbers about the OLD cluster: compute nodes, node interconnect,
 operating system, and storage configuration.
 
 
@@ -52,7 +52,7 @@ QDR Infiniband.
  
 .. _linux-cluster:
 
-Stallo - a Linux cluster 
+OLD - a Linux cluster 
 ========================
 
 This is just a quick and brief introduction to the general features of Linux Clusters.
@@ -83,17 +83,6 @@ important software innovation  " both in 2004 and 2005 in HPCWire. Now
 Rocks is a de-facto standard for cluster-management in Norwegian
 supercomputing.
 
-Stallo - Sami mythology
-========================
-
-In the folklore of the Sami, a Stallo (also Stallu or Stalo) is a sami wizard.
-"The Sami traditions up North differ a bit from other parts of Norwegian
-traditions. You will find troll and draug and some other creatures as well,
-but the Stallo is purely Sami. He can change into all kinds of beings,;
-animals, human beings, plants, insects, bird – anything. He can also “turn”
-the landscape so you miss your direction or change it so you don’t recognise
-familiar surroundings.  Stallo is very rich and smart, he owns silver and
-reindeers galore, but he always wants more. To get what he wants he tries to
-trick the Samis into traps, and the most popular Sami stories tell how people
-manage to fool Stallo." NB! Don’t mix Stallo with the noaide! He is a real
-wizard whom people still believe in.
+OLD - Name etimology
+====================
+Name meaning. 
