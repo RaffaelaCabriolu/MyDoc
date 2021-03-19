@@ -39,7 +39,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
    :caption: clusters
    
    clusters/Old
-   clusters/New
+   clusters/GRO
 
 .. 
   clusters/uit-guidelines
