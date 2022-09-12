@@ -20,24 +20,26 @@
 #              d-hh:mm:ss
 #SBATCH --time=0-00:05:00
 
-# Define the partition on which the job shall run. May be omitted.
+# Define the partition on which the job shall run, if it is omitted, the job
+# will be automatically placed in the normal-partition. 
 #SBATCH --partition normal
 
-# How much memory you need.
-# --mem will define memory per node and
-# --mem-per-cpu will define memory per CPU/core. Choose one of those.
+# The following allows to require the needed memory.
+# "--mem" defines memory per node and
+# "--mem-per-cpu" defines memory per CPU/core. Choose one of those.
 #SBATCH --mem-per-cpu=1500MB
-##SBATCH --mem=5GB    # this one is not in effect, due to the double hash
+##SBATCH --mem=5GB    # every line with a double hash is commented.
 
-# Turn on mail notification. There are many possible self-explaining values:
+# With the following line you can turn on mail notification. 
+# There are many possible self-explaining values:
 # NONE, BEGIN, END, FAIL, ALL (including all aforementioned)
 # For more values, check "man sbatch"
 #SBATCH --mail-type=END,FAIL
 
 # You may not place any commands before the last SBATCH directive
 
-# Define and create a unique scratch directory for this job
-SCRATCH_DIRECTORY=/global/work/${USER}/${SLURM_JOBID}.stallo-adm.uit.no
+# Define and create a unique scratch directory for this job. 
+SCRATCH_DIRECTORY=/work/${USER}/${SLURM_JOBID}.phys.ntnu.no
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 
@@ -59,7 +61,7 @@ cp ${SCRATCH_DIRECTORY}/my_output ${SLURM_SUBMIT_DIR}
 # was produced during runtime, i.e. stdout and stderr.
 
 # After everything is saved to the home directory, delete the work directory to
-# save space on /global/work
+# save space on the /work directory
 cd ${SLURM_SUBMIT_DIR}
 rm -rf ${SCRATCH_DIRECTORY}
 

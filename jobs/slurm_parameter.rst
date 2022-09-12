@@ -1,45 +1,63 @@
 .. _slurm:
 
+======================
 SLURM Workload Manager
-=======================
+======================
 
-SLURM is the workload manager and job scheduler used for Stallo.
+Slurm is a queing system and a job scheduler installed in the Local HPC at IFY and in IDUN. Lmod is a module system that manages the dependencies of modules and softwares. 
 
 There are two ways of starting jobs with SLURM; either interactively with ``srun``
 or as a script with ``sbatch``.
 
 Interactive jobs are a good way to test your setup before you put it into a script
-or to work with interactive applications like MATLAB or python.
+or to work with other applications like python.
 You immediately see the results and can check if all parts behave as you expected.
-See :ref:`interactive` for more details.
 
+Starting an interactive job
+---------------------------
+An interactive job can be started wuth the following line:
+
+  $ srun --nodes=1 --ntasks-per-node=1 --time=00:10:00 --pty bash -i
+
+This line asks for a single core on one interactive node for ten minutes with the
+default amount of memory. The command prompt will appear as soon as
+the job starts.
+
+Once the interactive job starts, it will appear a meassage similar to the following::
+
+  srun: job 10345 queued and waiting for resources
+  srun: job 10345 has been allocated resources
+
+To end the job digit exit in the bash shell. If the job exceeds the time or memory
+limits, it will abort.
+
+Interactive jobs have the same policies as normal batch jobs, there
+are no extra restrictions. Consider that you might be
+sharing the node with other users.
 
 .. _slurm_parameter:
 
 SLURM Parameter
 -----------------
 
-SLURM supports a multitude of different parameters.
-This enables you to effectivly tailor your script to your need when using Stallo
-but also means that is easy to get lost and waste your time and quota.
+SLURM supports a multitude of different parameters that can enable tailoring your resources requests to your computational needs, however, if not used appropriately, those parameters can cause a waisting of computational resources and time. 
 
 The following parameters can be used as command line parameters with ``sbatch`` and
-``srun`` or in jobscript, see :ref:`job_script_examples`.
-To use it in a jobscript, start a newline with ``#SBTACH`` followed by the parameter.
-Replace <....> with the value you want, e.g. ``--job-name=test-job``.
+``srun`` or in jobscript. To use a parameter in a jobscript, start a newline with ``#SBATCH`` followed by the parameter, refer to :ref:`job_script_examples` for more examples.
+In the following, you can replace <....> with the value you want, e.g. ``--job-name=test-job``, either in the jobscript approach or in the interactive approach.
 
 
-Basic settings:
+Basic settings
 +++++++++++++++
 
-=============================    ===============================================================================
+=============================    ================================================================================
 Parameter                        Function
-=============================    ===============================================================================
+=============================    ================================================================================
 --job-name=<name>                Job name to be displayed by for example ``squeue``
---output=<path>                  | Path to the file where the job (error) output is written to 
---mail-type=<type>               | Turn on mail notification; type can be one of BEGIN, END, FAIL, REQUEUE or ALL
+--output=<path>                  Path to the file where the job (error) output is written to 
+--mail-type=<type>               Turn on mail notification; type can be one of BEGIN, END, FAIL, REQUEUE or ALL
 --mail-user=<email_address>      Email address to send notifications to
-=============================    ===============================================================================
+=============================    ================================================================================
 
 
 Requesting Resources
@@ -54,21 +72,18 @@ Parameter                       Function
 --mem-per-cpu=<MB>              Memory (RAM) per requested CPU core
 --ntasks-per-node=<num_procs>   Number of (MPI) processes per node. More than one useful only for MPI jobs. Maximum number depends nodes (number of cores)
 --cpus-per-task=<num_threads>   CPU cores per task. For MPI use one. For parallelized applications benchmark this is the number of threads.
---exclusive                     Job will not share nodes with other running jobs. You will be charged for the complete nodes even if you asked for less.
+--exclusive                     Job will not share nodes with other running jobs.
 =============================   ============================================================================================================================
 
 
 Accounting
 +++++++++++++++++++++
-See also :ref:`label_partitions`.
+For the partitions in HPC_IFY refer to :doc:`/clusters/hpc`.
 
-==================      ==========================================================================================================
-Parameter               Function
-==================      ==========================================================================================================
---account=<name>        Project (not user) account the job should be charged to.
---partition=<name>      Partition/queue in which o run the job. 
---qos=devel             On stallo the *devel* QOS (quality of servive) can be used to submit short jobs for testing and debugging.
-==================      ==========================================================================================================
+==================      ====================================================================================================================
+--account=<name>        Project (not user) account the job. HPC_FY is not an account-based for now. You should use this in the IDUN cluster. 
+--partition=<name>      Partition/queue in which o run the job. Select that in base of the needs.
+==================      ====================================================================================================================
 
 
 Advanced Job Control
@@ -79,29 +94,26 @@ Parameter                    Function
 ==========================   ==================================================================================================================================================================
 --array=<indexes>            Submit a collection of similar jobs, e.g. ``--array=1-10``. (sbatch command only). See official `SLURM documentation <https://slurm.schedmd.com/job_array.html>`_
 --dependency=<state:jobid>   Wait with the start of the job until specified dependencies have been satified. E.g. --dependency=afterok:123456
---ntasks-per-core=2             Enables hyperthreading. Only useful in special circumstances.
+--ntasks-per-core=2          Enables hyperthreading per core. Only useful in special circumstances.
 ==========================   ==================================================================================================================================================================
-
 
 Differences between CPUs and tasks
 -------------------------------------
 
-As a new users writing your first SLURM job script the difference between
+As a new user writing your first SLURM job script, the difference between
 ``--ntasks`` and ``--cpus-per-taks`` is typically quite confusing.
-Assuming you want to run your program on a single node with  16 cores which 
-SLURM parameters should you specify?
+You may wonder, for example, which SLURM parameters to use to run your program on a single node with 10 cores. 
 
 The answer is it depends whether the your application supports MPI.
 MPI (message passing protocol) is a communication interface used for developing 
 parallel computing programs on distributed memory systems.
 This is necessary for applications running on multiple computers (nodes) to be able to
-share (intermediate) results.
+share (intermediate) results between the nodes.
 
 To decide which set of parameters you should use, check if your application utilizes
 MPI and therefore would benefit from running on multiple nodes simultaneously.
 On the other hand you have an non-MPI enables application or made a mistake in 
 your setup, it doesn't make sense to request more than one node.
-
 
 .. _slurm_recommendations:
 
@@ -111,8 +123,8 @@ Settings for OpenMP and MPI jobs
 Single node jobs
 ++++++++++++++++
 
-For applications that are not optimized for HPC (high performance computing) systems
-like simple python or R scripts and a lot of software which is optimized for desktop PCs.
+This request is useful for applications that are not optimized for HPC (high performance computing) systems,
+like simple python or R scripts and a lot of other softwares that are optimized for desktop PCs.
 
 Simple applications and scripts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -125,11 +137,11 @@ Parameter                       Function
 --nodes=1                       Start a unparallized job on only one node
 --ntasks-per-node=1             For OpenMP, only one task is necessary
 --cpus-per-task=1               Just one CPU core will be used.
---mem=<MB>                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G
+--mem=<MB>                      Memory (RAM) for the job. Number followed by unit prefix, e.g. 10G
 =============================   ============================================================================================================================
 
-If you are unsure if your application can benefit from more cores try a higher number and
-observe the load of your job. If it stays at approximately one there is no need to ask for more than one.
+If you are unsure if your application can benefit from more cores try a higher number of --cpus-per-task and
+observe the CPU load of your job. If it stays at approximately one there is no need to ask for more than one.
 
 
 OpenMP applications
@@ -151,24 +163,22 @@ Parameter                       Function
 Multiple node jobs (MPI)
 +++++++++++++++++++++++++
 
-For MPI applications.
+In certain cases, one single node and/or few CPU cores are not enough. 
 
-Depending on the frequency and bandwidth demand of your setup, you can either just start a number of MPI tasks or request whole nodes.
+You can either just start a number of MPI tasks or request whole nodes.
 While using whole nodes guarantees that a low latency and high bandwidth it usually results in a longer queuing time compared to cluster wide job.
-With the latter the SLURM manager can distribute your task across all nodes of stallo and utilize otherwise unused cores on nodes which for example run a 16 core job on a 20 core node. This usually results in shorter queuing times but slower inter-process connection speeds.
+With the latter the SLURM manager can distribute your task across all nodes and utilize otherwise unused cores on nodes which for example run a 16 core job on a 20 core node. This usually results in shorter queuing times but slower inter-process connection speeds.
 
 We strongly advice all users to ask for a given set of cores when submitting
 multi-core jobs.  To make sure that you utilize full nodes, you should ask for
-sets that adds up to both 16 and 20 (80, 160 etc) due to the hardware specifics
-of Stallo i.e. submit the job with ``--ntasks=80`` **if** your application
-scales to this number of tasks.
+sets that adds up to both 16 and 20 (80, 120 etc) due to the hardware specifics
 
 This will make the best use of the resources and give the most predictable
 execution times. If your job requires more than the default available memory per
-core (32 GB/node gives 2 GB/core for 16 core nodes and 1.6GB/core for 20 core
+core (125 GB/node gives 7,8 GB/core for 16 core nodes and 6,25 GB/core for 20 core
 nodes) you should adjust this need with the following command: ``#SBATCH
---mem-per-cpu=4GB`` When doing this, the batch system will automatically allocate
-8 cores or less per node.
+--mem-per-cpu=25 GB`` When doing this, the batch system will automatically allocate
+4 cores of 20 core nodes.
 
 To use whole nodes
 ^^^^^^^^^^^^^^^^^^
@@ -177,7 +187,7 @@ To use whole nodes
 Parameter                       Function
 =============================   =============================================================================================================================
 --nodes=<num_nodes>             Start a parallel job for a distributed memory system on several nodes
---ntasks-per-node=<num_procs>   Number of (MPI) processes per node. Maximum number depends nodes (16 or 20 on Stallo)
+--ntasks-per-node=<num_procs>   Number of (MPI) processes per node. Maximum number depends nodes (16 on HPC_IFY)
 --cpus-per-task=1               Use one CPU core per task. 
 --exclusive                     Job will not share nodes with other running jobs. You don't need to specify memory as you will get all available on the node.
 =============================   =============================================================================================================================
@@ -198,12 +208,12 @@ Scalability
 +++++++++++
 
 You should run a few tests to see what is the best fit between minimizing
-runtime and maximizing your allocated cpu-quota. That is you should not ask for
+runtime and maximizing your allocated cpu. That is you should not ask for
 more cpus for a job than you really can utilize efficiently. Try to run your
 job on 1, 2, 4, 8, 16, etc., cores to see when the runtime for your job starts
-tailing off. When you start to see less than 30% improvement in runtime when
-doubling the cpu-counts you should probably not go any further. Recommendations
-to a few of the most used applications can be found in :ref:`sw_guides`.
+tailing off. If you start to see less than 30% improvement in runtime when
+doubling the cpu-counts you should probably not increase further the number of cores. 
+Recommendations to a few of the most used applications can be found in :ref:`sw_guides`.
 
 
 Job related environment variables
@@ -222,16 +232,18 @@ List of nodes used in a job::
 
   SLURM_NODELIST
 
-Scratch directory::
+..
+	Scratch and Work directory::
+	Is $WORK directory different from /work/, what shall it be used? 
 
-  SCRATCH  # defaults to /global/work/${USER}/${SLURM_JOBID}.stallo-adm.uit.no
+  	WORK  # defaults to /scracth/
 
-We recommend to **not** use $SCRATCH but to construct a variable yourself and use that in your script, e.g.::
+	We recommend to **not** use $SCRATCH but to construct a variable yourself and use that in your script, e.g.::
 
-  SCRATCH_DIRECTORY=/global/work/${USER}/my-example/${SLURM_JOBID}
+	  SCRATCH_DIRECTORY=/scratch/${USER}/my-example/${SLURM_JOBID}
 
-The reason for this is that if you forget to sbatch your job script, then $SCRATCH may suddenly be undefined and you risk erasing your
-entire /global/work/${USER}.
+	The reason for this is that if you forget to sbatch your job script, then $SCRATCH may suddenly be undefined and you risk erasing your
+	entire /global/work/${USER}.
 
 Submit directory (this is the directory where you have sbatched your job)::
 
@@ -245,76 +257,3 @@ Default number of threads::
 Task count::
 
   SLURM_NTASKS
-
-
-
-.. _label_partitions:
-
-Partitions (queues) and services
---------------------------------
-
-SLURM differs slightly from the previous Torque system with respect to
-definitions of various parameters, and what was known as queues in Torque may
-be covered by both ``--partition=...`` and ``--qos=...``.
-
-We have the following partitions:
-
-normal:
-    The default partition. Up to 48 hours of walltime.
-
-singlenode:
-    If you ask for less resources than available on one single node, this will be the partition your job
-    will be put in. We may remove the single-user policy on this partition in the future.
-    This partition is also for single-node jobs that run for longer than 48 hours.
-
-multinode:
-    Request this partition if you ask for more resources than you will find on
-    one node and request walltime longer than 48 hrs.
-
-highmem:
-    Use this partition to use the high memory nodes with 128 GB. You will have to apply for access to this partition by sending us an email explaining why you need these high memory nodes.
-
-To figure out the walltime limits for the various partitions, type::
-
-  $ sinfo --format="%P %l"  # small L
-
-As a service to users that needs to submit short jobs for testing and debugging, we have a service called devel.
-These jobs have higher priority, with a maximum of 4 hrs of walltime and no option for prolonging runtime.
-
-Jobs in using devel service will get higher priority than any other jobs
-in the system and will thus have a shorter queue delay than regular
-jobs. To prevent misuse the devel service has the following limitations:
-
-*  Only one running job per user.
-*  Maximum 4 hours walltime.
-*  Only one job queued at any time, remark this is for the whole queue.
-
-You submit to the devel-service by typing::
-
-  #SBATCH --qos=devel
-
-in your job script.
-
-
-General job limitations
------------------------
-
-The following limits are the default per user in the batch system. Users
-can ask for increased limits by sending a request to support@metacenter.no.
-
-========================== ================
-Limit                      Value
-========================== ================
-Max number of running jobs 1024
-Maximum cpus per job       2048
-Maximum walltime           28 days
-Maximum memory per job     No limit [1]
-========================== ================
-
-[1] There is a practical limit of 128GB per compute node used.
-
-**Remark:** Even if we impose a 28 day run time limit on Stallo we only give
-a weeks warning on system maintenance. Jobs with more than 7 days walltime,
-will be terminated and restarted if possible.
-
-See :ref:`about_stallo` chapter of the documentation if you need more information on the system architecture.

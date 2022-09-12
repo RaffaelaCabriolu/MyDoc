@@ -1,7 +1,7 @@
 
 
-Open Question & Answer Sessions for All Users
-=============================================
+Forum, Open Question & Answer Sessions
+======================================
 Learn new tricks and ask & discuss questions 
 --------------------------------------------
 
@@ -23,21 +23,15 @@ If you think you might have a challenging question or topics for us, you can als
 Next event
 -------------
 
-- **2020-10-13, 13:00 - 15:00**, `online Zoom meeting <https://uit.zoom.us/j/65284253551>`_
-  
-
 Past events
 +++++++++++
 
-- 2020-10-10, 13:00 - 15:00, online Zoom meeting
-- 2020-04-23, 13:00 - 15:00, online Zoom meeting
-- 2020-02-19, 10:00 - 12:00, `main kantina <http://bit.ly/36Fhd9y>`_
-- 2019-11-12, 14:00 - 16:00, `main kantina <http://bit.ly/36Fhd9y>`_
-- 2019-09-11, 10:00 - 12:30, MH bygget atrium
 
-
-Similar events which serve as inspiration
+Similar events as inspiration
 +++++++++++++++++++++++++++++++++++++++++
+
+
+WHICH SOFTWARE YOU WOULD WNAT IN THE HPC CLUSTER? 
 
 - https://scicomp.aalto.fi/news/garage.html
 - https://openworking.wordpress.com/2019/02/04/coding-problems-just-pop-over/

@@ -1,17 +1,17 @@
+==============================
+NTNU HPC Physics Documentation
+==============================
 
-===================================
-HPC-Physics User Documentation
-===================================
+This is the official documentation of the computational resources avalaible at the Physics Department of NTNU in Trondheim (IFY). 
+This documentation is designed for students, researchers and staff members who are willing to use the computational facilities in IFY, and, it aims to create a support environment for any user that is willing to use those facilities.
+The audience may be completely unaware of the High Performance Computing (HPC) concepts but must have some basic understanding of computers and computer programming.
 
-.. topic:: *OVERVIEW*
-   
-    This the official documentation of the High Performance Computing (HPC) clusters in Physics, NTNU, Trondheim. 
-    This documentation is designed for students, researchers and staff members who are willing to use HPC core facilities in Physics. 
-    The audience may be completely unaware of the HPC concepts but must have some basic un-derstanding of computers and computer programming.
-    If you have questions, special needs or problems, please contact us at
-    raffaela.cabriolu@ntnu.no and bogdan.voaidas@ntnu.no 
+If you have questions, special needs or problems, please contact us at the links in the section :doc:`/help/staff` and in the sections relative to the specific computing system. 
 
-If you are new here, you might want to learn the basics of the clusters in Physics at NTNU, Trondheim, here:
+.. figure:: ComputationalCluster.png
+   :scale: 50 %
+
+In the following links you can learn the basics knowledge you need to use a clusters in general, and, the computer facilities at IFY in particular. In addition, those pages will keep you up to date with the status of the IFY facilities. 
 
 
 .. toctree::
@@ -25,11 +25,11 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: Getting help
-..
+
    help/contact
-   help/writing-support-requests
-   help/faq
    help/staff
+   help/tutorials
+   help/faq
    help/hpc-qa-sessions
 
 
@@ -37,10 +37,6 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
    :caption: clusters
-   
-   clusters/Old
-   clusters/GRO
-
 .. 
   clusters/uit-guidelines
 
@@ -71,7 +67,6 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 .. toctree::
    :maxdepth: 1
 
-   jobs/interactive
    jobs/job_management
    jobs/monitoring
    jobs/running_mpi_jobs
@@ -91,7 +86,7 @@ If you are new here, you might want to learn the basics of the clusters in Physi
 
 .. toctree::
    :maxdepth: 2
-
+..
    applications/sw_guides
 
 

@@ -4,7 +4,7 @@
 # job-array example #
 #####################
 
-#SBATCH --job-name=example
+#SBATCH --job-name=array_example
 
 # 16 jobs will run in this array at the same time
 #SBATCH --array=1-16
@@ -17,10 +17,8 @@
 # this is a hard limit
 #SBATCH --mem-per-cpu=500MB
 
-# you may not place bash commands before the last SBATCH directive
-
 # define and create a unique scratch directory
-SCRATCH_DIRECTORY=/global/work/${USER}/job-array-example/${SLURM_JOBID}
+SCRATCH_DIRECTORY=/work/${USER}/job-array-example/${SLURM_JOBID}
 mkdir -p ${SCRATCH_DIRECTORY}
 cd ${SCRATCH_DIRECTORY}
 
@@ -37,5 +35,5 @@ cp output_${SLURM_ARRAY_TASK_ID}.txt ${SLURM_SUBMIT_DIR}
 cd ${SLURM_SUBMIT_DIR}
 rm -rf ${SCRATCH_DIRECTORY}
 
-# happy end
+# Done
 exit 0

@@ -12,7 +12,7 @@ Basic examples
 General blueprint for a jobscript
 ---------------------------------
 
-You can save the following example to a file (e.g. run.sh) on Stallo. Comment
+You can copy the following example into a file (e.g. run.sh) on the HPC local cluster or in the IDUN system. Comment
 the two ``cp`` commands that are just for illustratory purpose (lines 46 and 55)
 and change the SBATCH directives where applicable. You can then run the script
 by typing::
@@ -47,7 +47,7 @@ Save this to a file called "test.py" and try it out::
   sleep for 10 seconds ...
   stop at 15:23:58
 
-Good. Now we would like to run this script 16 times at the same time.
+Now we wish to run this script 16 times at the same time.
 For this we use the following script:
 
 .. literalinclude:: files/slurm-job-array.sh
@@ -81,20 +81,19 @@ Packaging smaller parallel jobs into one large parallel job
 
 There are several ways to package smaller parallel jobs into one large parallel
 job. The preferred way is to use Job Arrays. Browse the web for many examples
-on how to do it. Here we want to present a more pedestrian alternative which
+on how to do it. Here we want to present an alternative which
 can give a lot of flexibility.
 
-In this example we imagine that we wish to run 5 MPI jobs at the same time,
-each using 4 tasks, thus totalling to 20 tasks.  Once they finish, we wish to
-do a post-processing step and then resubmit another set of 5 jobs with 4 tasks
-each:
+In this example we wish to run 5 MPI jobs at the same time, each using 4 tasks, 
+thus totalling to 20 tasks.  Once they finish, we wish to
+do a post-processing step and then resubmit another set of 5 jobs with 4 tasks each:
 
 .. literalinclude:: files/slurm-smaller-jobs.sh
    :language: bash
 
 
 The ``wait`` commands are important here - the run script will only continue
-once all commands started with ``&`` have completed.
+once all commands containing ``&`` have completed.
 
 .. _allocated_entire_memory:
 

@@ -1,48 +1,38 @@
-.. _getting_started:
-
 ===============
 Getting started
 ===============
 
-Here you will get the basics to work with the different clusters in Physics. Please study carefully the links at the end of each paragraph to get more detailed information.
+This section presents the basic knowledge needed to use efficiently the different computational facilities in Physics that include three computing systems:
 
+.. toctree::
+   :maxdepth: 1
 
-Get an account
+   hpc.rst
+   idun.rst  
+   grid.rst
+
+login-accounts
 --------------
 
-If you are associated with NTNU, you may apply locally. (CHECK THIS:link to apply locally )
+Every one that is associated with the Physics Department can be granted an account to the Physics computing systems. To set up an account at the :doc:`grid` and :doc:`idun` facilities contact `Bogdan Voadais <bogdan.voaidas@ntnu.no>`_, or `Terje Rørsten <terje.rosten@ntnu.no>`_, while for having access to the :doc:`hpc` contact `Egil Holvik <egil.holvik@ntnu.no>`_.
 
-You can also apply for an account for the clusters in physics or any of the other Norwegian computer clusters at the `Metacenter account application <https:/www.metacenter.no/user/application/form/notur/>`_ (IS THIS TRUE?). This is also possible if you already have a local account. :doc:`/account/account` (CHECK THIS?)
+Connect to a cluster
+--------------------
 
-Change temporary password
--------------------------
-FILL THIS
+You can connect to the facilities via the *SSH* protocol. You may refer to sections :doc:`hpc`, :doc:`idun`, and, :doc:`grid` to have the detailed instructions for each computing system.
+In general, on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@host_ip_adress``. From Windows, you may connect using `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_. It is possible to perform the X-forwarding for graphical applications. Please, follow the link for details on all mentioned methods and on the ssh protocol in general: :doc:`/account/login`
 
-..
-  The password you got by SMS  has to be changed on `MAS <https://www.metacenter.no/user/login/?next=/user/password/>`_ within  one week, or else the loginaccount will be closed again - and you need to contact us for reopening. You can't use the temporary password for logging in to Stallo.
-
-Connect to the clusters
------------------------
-
-You may connect to the New and Old clusters via *SSH* to ``stallo.uit.no`` (CHANGE THIS). This means that on Linux and OSX you may directly connect by opening a terminal and writing ``ssh username@stallo.uit.no`` (New and Old cluster). From Windows, you may connect via PuTTY which is available in the Software Center. X-forwarding for graphical applications is possible. There exists also a webinterface to allow easy graphical login. Please see the following link for details to all mentioned methods. :doc:`/account/login`
-
-On nodes and files
-------------------
-FILL THIS
-
-..
-  When you login, you will be on a login node. Do *not* run any long-lasting programs here. The login node shall only be used for job preparation (see below) and simple file operations. You will also be in your home directory ``/home/username``. Here, you have 300 GB at your disposal that will be backed up regularly. For actual work, please use the global work area at ``/global/work/username``. This space is not backed up, but it has a good performance and is 1000 TB in size. Please remove old files regularly. :doc:`/storage/storage` To move files from your computer to Stallo or vice versa, you may use any tool that works with *ssh*. On Linux and OSX, these are scp, rsync, or similar programs. On Windows, you may use WinSCP. :doc:`/storage/file_transfer`
-
-Run a program
--------------
-FILL THIS
-
-..
-  There are many programs pre-installed. You may get a list of all programs by typing ``module avail``. You can also search within that list. ``module avail blast`` will search for Blast (case-insensitive). When you found your program of choice, you may load it using ``module load BLAST+/2.7.1-intel-2017b-Python-2.7.14``. All program files will now be available, i.e. you can now simply call ``blastp -version`` to run Blast and check the loaded version. You can also compile your own software, if necessary. :doc:`/software/modules` To eventually run the program, you have to write a job script. In this script, you can define how long the job (i.e. the program) will run and how much memory and compute cores it needs. For the actual computation, you need to learn at least the basics of Linux shell scripting. You can learn some basics here: :doc:`/account/linux`. When you wrote the job script, you can start it with ``sbatch jobscript.sh``. This will put the script in the queue, where it will wait until an appropriate compute node is available. You can see the status of your job with ``squeue -u username``. :doc:`/jobs/batch` and :doc:`/jobs/examples` Every job that gets started will be charged to your quota. Your quota is calculated in hours of CPU time and is connected to your specific project. To see the status of your quota account(s), type ``cost`` :doc:`/account/accounting`
+On login nodes
+--------------
+Once you have performed the login, your will be on a login node. Do *not* lunch any long-lasting programs on the login nodes of the HPC local cluster and of the IDUN system! In general, the login nodes of a cluster shall only be used for job preparation and simple file operations. Once you login on the HPC local and on the Grid system, you will be in your home directory ``/home/username``. For now, there is not quota or strage limitation on your home folder, but, as a rule of thumbs, your files should not occupy more than 50 GB. The Physics Department will impose some restrictions on storage soon. Please remove non necessary files regularly. 
+Your home folder is shared among the Grid system and the Local HPC cluster, since they refer to common login nodes. There is a backup system for your home directory and it is managed by the central IT system. 
+Regarding the Idun system, you can get more details on the administration of storage and back up system at the following link `IDUN <https://www.hpc.ntnu.no/idun/how-to-become-a-shareholder-and-partner-in-idun/>`_. 
 
 Get help
 --------
 
-Do you need help with the clusters? Write us an email to support@metacenter.no and or (Our email address?). You can also request new software (either an update or entirely new software), suggest changes to this documentation, or send us any other suggestions or issues concerning Stallo to that email address. Please also read the rest of this documentation.
+Feedback regarding this documentation, any other suggestion concerning the computational resources at NTNU in Physics are welcomed and those should be adressed to the people in the session :doc:`/help/staff`.
+To get technical guidance and help on a particular computing system refer to the relative specific session. Furthermore, you can refer to the sessions :doc:`/help/faq`, :doc:`/help/hpc-qa-sessions`, and, :doc:`/help/tutorials` for practical examples and common technical issues. To get updates on the status of the computing system refer to the session :doc:`/news/news`. 
+
 
 Happy researching!

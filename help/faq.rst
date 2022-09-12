@@ -11,62 +11,41 @@ Passwords
 I forgot my password - what now?
 --------------------------------
 
-You can reset it here: https://www.metacenter.no/user/
+To reset your passord, get in contact with the support relative to the resource. 
 
 
-How do I change my password on Stallo?
+How do I change my password ?
 --------------------------------------
 
-The password can be changed on the
-`password metacenter page <https://www.metacenter.no/user/password/>`_, log in using your
-username on Stallo and the NOTUR domain.
+If there is an easy procedure to reset the password, that can maybe oulined here. 
 
-The ``passwd`` command known from other Linuxes does not work.
-The Stallo system is using a centralised database for user management.
-This will override the password changes done locally on Stallo.
-
-What is the ssh key fingerprint for stallo.uit.no?
+What is the ssh key fingerprint for the resources?
 -----------------------------------------------------
 
-The SHA256 key fingerprint is: ``SHA256:YJpwZ91X5FNXTc/5SE1j9UR1UAAI4FFWVwNSoWoq6Hc``
-
-The MD5 key fingerprint is: ``MD5:36:a8:c5:f3:21:24:bb:bc:07:6f:af:4a:fe:3e:cb:9a``
-
-If you are more of a visual person, use ``ssh -o VisualHostKey=yes stallo.uit.no`` and compare it to this visual key::
-
-  +---[RSA 1024]----+
-  |      oo+ooo**BO^|
-  |     . + ..+ o.BO|
-  |  . . * . o . +.=|
-  |   o * . . . . o.|
-  |    o   S     . .|
-  |   .   o         |
-  |  . . .          |
-  | .  ..E          |
-  |  .. .           |
-  +----[SHA256]-----+
-
-
-.. COMMENT: use ``ssh -o VisualHostKey=yes stallo.uit.no`` to get both, the SHA256 string and visual key.
+Can this section be helpful to connect from outside? 
+The SHA256 key fingerprint is: `` ``
 
 
 Installing software
 ===================
 
-I need Python package X but the one on Stallo is too old or I cannot find it
+I need Python package X but the one on the resource I am using is too old or I cannot find it
 ----------------------------------------------------------------------------
 
 You can choose different Python versions with either the module system or using Anaconda/Miniconda. See here: :doc:`/software/modules` and :doc:`/software/python_r_perl`.
 
 In cases where this still doesn't solve your problem or you would like to install a package yourself, please read the next section below about installing without sudo rights.
 
+Shall we mention here EasyBuild for HPC? 
+
 If we don't have it installed, and installing it yourself is not a good solution for you, please contact us and we will do our best to help you.
 
 
-Can I install Python software as a normal user without sudo rights?
+Can I install some software as a normal user without sudo rights?
 -------------------------------------------------------------------
 
-Yes. Please see :doc:`/software/python_r_perl`.
+Shall we add this flexibility? 
+Yes. Please see the following section: 
 
 
 Compute and storage quota
@@ -85,6 +64,8 @@ Only home and project partitions have quota.
 
 How many CPU hours have I spent?
 --------------------------------
+
+This tool can maybe be useful if they decide to make a bill for computational hours: 
 
 For a simple summary, you can use the command ``cost``,
 for more details, you can use::
@@ -110,13 +91,13 @@ How can I export the display from a compute node to my desktop?
 
 If you need to export the display from a compute node to your desktop you should
 
-#. First login to Stallo with display forwarding.
+#. First login to your resource with display forwarding.
 #. Then you should reserve a node, with display forwarding, trough the
    queuing system.
 
 Here is an example::
 
-  $ ssh -Y stallo.uit.no                 # log in with port forwarding
+  $ ssh -Y                               # log in with port forwarding
   $ srun -N 1 -t 1:0:0 --pty bash -I     # reserve and log in on a compute node
 
 This example assumes that you are running an X-server on your local
@@ -128,7 +109,8 @@ on your local PC.
 How can I access a compute node from the login node?
 ----------------------------------------------------
 
-Log in to stallo.uit.no and type e.g.::
+Is the following useful? 
+Log in to the resource and type e.g.::
 
   $ ssh compute-1-3
 
@@ -164,7 +146,7 @@ for a similar solution.
 Jobs and queue system
 =====================
 
-I am not able to submit jobs longer than two days
+I am not able to submit jobs longer than one days
 -------------------------------------------------
 
 Please read about :ref:`label_partitions`.
@@ -189,8 +171,8 @@ start, use the command::
 
   squeue --start -j <job_id>
 
-This command will give you information about how many CPUs your job requires,
-for how long, as well as when approximately it will start and complete.  It
+This command will give you information about how many nodes your job requires,
+as well as when approximately it will start and complete.  It
 must be emphasized that this is just a best guess, queued jobs may start
 earlier because of running jobs that finishes before they hit the walltime
 limit and jobs may start later than projected because new jobs are submitted
@@ -203,8 +185,8 @@ How can I see the queing situation?
 How can I see how my jobs are doing in the queue, if my jobs are idle, blocked,
 running?
 
-On the webpage http://stallo-login2.uit.no/slurmbrowser/html/squeue.html you
-can find information about the current load on stallo, some information about
+On the webpage you
+can find information about the current load on , some information about
 the nodes, and the information you would get from the showq command, which is
 described below. You can also find information about your job and if you the
 job is running, you can find graphs about its usage of the CPUs, memory and so

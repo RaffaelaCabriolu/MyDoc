@@ -1,64 +1,28 @@
+=========================
+Support staff and Contact
+=========================
 
-
-=============
-Support staff
-=============
-
-
-Our vision
-==========
-
-Give our users a competitive advantage in the international science race.
-
-
-Goal
-----
-
-Contribute to make our scientists the most efficient users of High Performance
-Computing (HPC), by creating the best support environment for any HPC user,
-and present them to the most efficient solutions to support their highest
-demands in HPC.
-
-
-Services
---------
-
-The HPC-Group works within three areas:
-
-* Technical and Operational computing resource support to the national
-  program, and local initiatives.
-* Basic and Advanced user support to projects and research groups that
-  utilizes HPC or is expecting to do so in the future.
-* Involvement in national development projects and initiatives, for instance
-  in GRID Computing and new technology areas.
-
+You can send feedbacks and/or suggest changes to this documentation contacting `Raffaela Cabriolu  <https://www.ntnu.edu/employees/raffaela.cabriolu>`_. You could also report any general issue concerning the computational resources at NTNU in Physics. Please read the rest of this documentation and refer to the sessions :doc:`/help/faq`, :doc:`/help/hpc-qa-sessions`, and, :doc:`/help/tutorials` to get further technical guidance. Monitor the session :doc:`/news/news` to get the updates regarding the status of the computing systems. If you have technical problems refer the to page dedicated to the specific computing system, i.e. :doc:`/clusters/hpc`, :doc:`/clusters/idun`, :doc:`/clusters/grid`. Your requests will be addressed as soon as we can. 
 
 National resource site
-----------------------
+----------------------------
 
-Since 2000 UiT has been a Resource Site in the National High Performance
-Computing Consortium (NOTUR), a joint mission between the four Norwegian
+Since the 2000 the National High Performance 
+Computing Consortium (NOTUR) is a joint mission between the four Norwegian
 Universities in Bergen, Oslo, Trondheim and Tromsø. Since December 2014
 UNINETT Sigma2 manages the national infrastructure and offers High Performance
 Computing and Data Storage.
 
-Regional resource site
-----------------------
+Other resources in site
+-------------------------
 
-The HPC group at UiT also has a role to play as a regional resource site
-within HPC, offering HPC services to other institutions in Northern Norway. A
-strategic collaboration between UiT and the Norwegian Polar Institute within
-HPC has been ongoing since 1998.
-
+IDUN at NTNU: `<https://www.hpc.ntnu.no/idun/>`
 
 Our team
 ========
 
-* `Radovan Bast <http://bast.fr>`_
-* `Roy Dragseth <https://uit.no/om/enhet/ansatte/person?p_document_id=42529&p_dimension_id=88223>`_
-* `Steinar Henden <https://uit.no/om/enhet/ansatte/person?p_document_id=43772&p_dimension_id=88223>`_
-* `Stig Rune Jensen <https://uit.no/om/enhet/ansatte/person?p_document_id=168046&p_dimension_id=88139>`_
-* `Dan Jonsson <https://uit.no/om/enhet/ansatte/person?p_document_id=44087&p_dimension_id=88223>`_
-* `Espen Tangen <https://uit.no/om/enhet/ansatte/person?p_document_id=43808&p_dimension_id=88223>`_
-* `Ilia Zhakun <https://uit.no/om/enhet/ansatte/person?p_document_id=522532&p_dimension_id=88223>`_
-* `Jørn Dietze <https://uit.no/om/enhet/ansatte/person?p_document_id=486227&p_dimension_id=88223>`_
+* `Raffaela Cabriolu  <https://www.ntnu.edu/employees/raffaela.cabriolu>`_
+* `Egil Holvik <https://www.ntnu.no/ansatte/egil.holvik>`_
+* `Bogdan Voaidas <https://www.ntnu.no/ansatte/bogdan.voaidas>`_
+* `Ingve Simonsen <https://www.ntnu.no/ansatte/ingve.simonsen>`_
+* `Terje Røsten <https://www.ntnu.no/ansatte/terje.rosten>`_
