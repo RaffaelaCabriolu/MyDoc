@@ -11,7 +11,7 @@ If you have questions, special needs or problems, please contact us at the links
 .. figure:: ComputationalCluster.png
    :scale: 50 %
 
-In the following links you can learn the basics knowledge you need to use a clusters in general, and, the computer facilities at IFY in particular. In addition, those pages will keep you up to date with the status of the IFY facilities. 
+In the following links you can learn the basics knowledge you need to use a clusters in general, and, the computer facilities at IFY in particular. In addition, those pages will keep you updatet with the status of the IFY facilities. 
 
 
 .. toctree::
