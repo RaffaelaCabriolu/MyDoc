@@ -29,7 +29,7 @@ And if you need X-forwarding (for instance, if you like to run Emacs in it's own
 
  ssh -X -Y <machine name>
 
-No matter how you login, you will need to confirm that the connection shall be trusted. Ex. if the SHA256 key fingerprint of the machine, i.e hpc_1.phys.ntnu.no, you are using is:
+No matter how you login, you will need to confirm that the connection shall be trusted. Ex. if the SHA256 key fingerprint of the machine, i.e hpc-1.phys.ntnu.no, you are using is:
 
 ::
 
@@ -39,7 +39,7 @@ You should get precisely this message the first time you login via ssh:
 
 ::
 
- The authenticity of host 'hpc_1.phys.ntnu.no (nn.nnn.nn)' can't be established.
+ The authenticity of host 'hpc-1.phys.ntnu.no (nn.nnn.nn)' can't be established.
  RSA key fingerprint is SHA256:YBLABLIBLU.
  Are you sure you want to continue connecting (yes/no)?
 
@@ -55,11 +55,11 @@ To avoid entering your password every time you login and to increase security, y
 
  ssh-keygen
 
-and follow the instructions on the screen. Please use a good passphrase. You will have to enter this passphrase the first time you log in after a reboot of the computer, but not anymore afterwards. To copy the public key to hpc_1.phys, type:
+and follow the instructions on the screen. Please use a good passphrase. You will have to enter this passphrase the first time you log in after a reboot of the computer, but not anymore afterwards. To copy the public key to hpc-1.phys, type:
 
 ::
 
- ssh-copy-id <username>@hpc_1.phys.ntnu.no
+ ssh-copy-id <username>@hpc-1.phys.ntnu.no
 
 To learn more about ssh keys, have a look at `this <https://wiki.archlinux.org/index.php/SSH_keys>`_ page.
 
@@ -86,18 +86,13 @@ Information on how to log in on a compute node.
 
 Some times you may want to log on a compute node (for instance to check
 out output files on the local work area on the node), and this is also
-done by using SSH. From hpc_1.phys.ntnu.no, for example, log into 
-the compute-x-y in the following way:
+done by using SSH. From hpc-1.phys.ntnu.no, for example, log into 
+the compute-x in the following way:
 
 ::
 
-    ssh -Y compute-x-y     (for instance: ssh compute-5-8)
+    ssh -Y compute-x     (for instance: ssh compute-2)
 
-or short
-
-::
-
-    ssh -Y cx-y        (for instance: ssh c5-8)
 
 If you don't need display forwarding you can omit the "-Y" option
 above.
@@ -110,9 +105,9 @@ Below is an example:
 
 ::
 
-    1) Log in on hpc_1.phys.ntnu.no with display forwarding.
+    1) Log in on hpc-1.phys.ntnu.no with display forwarding.
 
-       $ ssh -Y hpc_1.phys.ntnu.no             
+       $ ssh -Y hpc-1.phys.ntnu.no             
 
     2) Reserve and log in on a compute node with display forwarding.
        (start an interactive job.)
