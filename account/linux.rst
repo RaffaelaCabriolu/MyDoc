@@ -1,4 +1,4 @@
-.. _linux:
+
 
 ==================
 Linux command line
@@ -8,31 +8,33 @@ Linux command line
 New on Linux systems?
 =====================
 
-This page contains some tips on how to get started using the Stallo cluster on
-UiT if you are not too familiar with Linux/ Unix. The information is intended
-for both users that are new to Stallo and for users that are new to
+This page contains information intended
+for both users that are new to HPC_IFY and for users that are new to
 Linux/UNIX-like operating systems. Please consult the rest of the user guide
 for information that is not covered in this chapter.
 
-For details about the hardware and the operating system of stallo, and basic
-explanation of Linux clusters please see the :ref:`about_stallo` part of this
-documentation.
+..
+  For details about the hardware and the operating system of stallo, and basic
+  explanation of Linux clusters please see the :ref:`about_stallo` part of this
+  documentation.
 
 To find out more about the storage and file systems on the machines, your disk
-quota, how to manage data, and how to transfer file to/from Stallo, please read
+quota, how to manage data, and how to transfer file to/from HPC_IFY, please read
 the :ref:`file_transfer` section.
 
 
 ssh
 ---
 
-The only way to connect to Stallo is by using ssh. Check
-the :ref:`login` in this documentation to learn more about ssh.
+The only way to connect to the HPC_IFY is by using ssh. Check
+the :doc:`/account/login` in this documentation to learn more about ssh.
 
 
 scp
 ---
-
+..
+  check the following lines: 
+ 
 The machines are stand-alone systems. The machines do not (NFS-)mount remote
 disks. Therefore you must explicitly transfer any files you wish to use to the
 machine by scp. For more info, see :ref:`file_transfer`.

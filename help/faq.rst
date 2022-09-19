@@ -11,19 +11,21 @@ Passwords
 I forgot my password - what now?
 --------------------------------
 
-To reset your passord, get in contact with the support relative to the resource. 
+To reset your password, get in contact with the support relative to the resource. 
 
 
 How do I change my password ?
 --------------------------------------
 
-If there is an easy procedure to reset the password, that can maybe oulined here. 
+..
+  If there is an easy procedure to reset the password, it can be oulined here. 
 
 What is the ssh key fingerprint for the resources?
 -----------------------------------------------------
 
-Can this section be helpful to connect from outside? 
-The SHA256 key fingerprint is: `` ``
+..
+  In this section we can explain how to connect from outside, using the VPN? 
+  The SHA256 key fingerprint is: `` ``
 
 
 Installing software
@@ -36,7 +38,8 @@ You can choose different Python versions with either the module system or using 
 
 In cases where this still doesn't solve your problem or you would like to install a package yourself, please read the next section below about installing without sudo rights.
 
-Shall we mention here EasyBuild for HPC? 
+..
+  Do they have any permission of installing new softwares by themselves. Shall we mention here EasyBuild for HPC? 
 
 If we don't have it installed, and installing it yourself is not a good solution for you, please contact us and we will do our best to help you.
 
@@ -44,15 +47,22 @@ If we don't have it installed, and installing it yourself is not a good solution
 Can I install some software as a normal user without sudo rights?
 -------------------------------------------------------------------
 
-Shall we add this flexibility? 
-Yes. Please see the following section: 
+..
+  Shall we add this flexibility? 
+  If Yes, we need to add instructions.  
 
+..
+  Do we have to add the billing system here? 
+  
 
 Compute and storage quota
 =========================
 
 How can I check my disk quota and disk usage?
 ---------------------------------------------
+
+..
+  The "quota" command does give "none" now.
 
 To check how large your disk quota is, and how much of it you have used,
 you can use the following command::
@@ -61,22 +71,22 @@ you can use the following command::
 
 Only home and project partitions have quota.
 
+.. What about the following? 
+ How many CPU hours have I spent?
+ --------------------------------
 
-How many CPU hours have I spent?
---------------------------------
+ This tool can maybe be useful if they decide to make a bill for computational hours: 
 
-This tool can maybe be useful if they decide to make a bill for computational hours: 
-
-For a simple summary, you can use the command ``cost``,
-for more details, you can use::
+ For a simple summary, you can use the command ``cost``,
+ for more details, you can use::
 
   $ gstatement --hours --summarize -p PROSJEKT -s YYYY-MM-DD -e YYYY-MM-DD
 
-For a detailed overview over usage you can use::
+ For a detailed overview over usage you can use::
 
   $ gstatement --hours -p PROSJEKT -s YYYY-MM-DD -e YYYY-MM-DD
 
-For more options see::
+ For more options see::
 
   $ gstatement --help
 
@@ -109,14 +119,16 @@ on your local PC.
 How can I access a compute node from the login node?
 ----------------------------------------------------
 
+..
 Is the following useful? 
+
 Log in to the resource and type e.g.::
 
-  $ ssh compute-1-3
+  $ ssh compute-1
 
 or use the shorter version::
 
-  $ ssh c1-3
+  $ ssh c1
 
 
 My ssh connections are dying / freezing
@@ -133,7 +145,7 @@ to add the following to your *local* ``~/.ssh/config`` file:
     ServerAliveInterval 10
 
 (*local* means that you need to make these changes to your computer,
-not on stallo)
+not on HPC)
 
 The above config is for `OpenSSH <https://www.openssh.org>`_, if you're
 using
@@ -146,20 +158,21 @@ for a similar solution.
 Jobs and queue system
 =====================
 
-I am not able to submit jobs longer than one days
--------------------------------------------------
 
-Please read about :ref:`label_partitions`.
+I am not able to submit jobs longer than a certain number of hours. 
+-------------------------------------------------------------------
 
+Please read about :ref:`Partitions`.
 
 Where can I find an example of job script?
 ------------------------------------------
 
 You can find job script examples in :ref:`job_script_examples`.
 
-Relevant application specific examples (also for beginning users) for a few applications can be found in
-:ref:`sw_guides`.
+..
+Do we need the following description?:
 
+Relevant application specific examples (also for beginning users) for a few applications can be found in :ref:`sw_guides`.
 
 When will my job start?
 -----------------------
@@ -200,12 +213,14 @@ If you prefer to use the command line, to see the job queue use::
 Why does my job not start or give me error feedback when submitting?
 --------------------------------------------------------------------
 
-Most often the reason a job is not starting is that Stallo is full at the moment and there are many jobs waiting in the queue. But sometimes there is an error in the job script and you are asking for a configuration that is not possible on Stallo. In such a case the job will not start.
+Most often the reason a job is not starting is that the resources are occupied at the moment and there are many jobs waiting in the queue. But sometimes there is an error in the job script and you are asking for a configuration that is not possible on the HPC. In such a case the job will not start.
 
 To find out how to monitor your jobs and check their status see :ref:`monitoring_jobs`.
 
 Below are a few cases of why jobs don't start or error messages you might get:
 
+..
+  check the following:
 
 **Memory per core**
 
@@ -213,11 +228,10 @@ Below are a few cases of why jobs don't start or error messages you might get:
    ``sbatch: error: Batch job submission failed: Requested node configuration is not available``
    With 1GB/core it works fine. What might be the cause to this?"
 
-On Stallo we have two different configurations available; 16 core and 20 core nodes - with both a
+On the HPC have different configurations available; 16 core and 20 core nodes - with both a
 total of 32 GB of memory/node. If you ask for full nodes by
 specifying both number of nodes and cores/node together with 2 GB of memory/core, you will ask
-for 20 cores/node and 40 GB of memory. This configuration does not exist on Stallo. If you ask
-for 16 cores, still with 2GB/core, there is a sort of buffer within SLURM no allowing you
+for 20 cores/node and 40 GB of memory. This configuration does not exist on the HPC. If you ask for 16 cores, still with 2GB/core, there is a sort of buffer within SLURM no allowing you
 to consume absolutely all memory available (system needs some to work). 2000MB/core works
 fine, but not 2 GB for 16 cores/node.
 
@@ -256,12 +270,13 @@ For instance::
 
 **QOSMaxWallDurationPerJobLimit**
 
-QOSMaxWallDurationPerJobLimit means that MaxWallDurationPerJobLimit has been exceeded. Basically, you have asked for more time than allowed for the given QOS/Partition. Please have a look at :ref:`label_partitions`
+QOSMaxWallDurationPerJobLimit means that MaxWallDurationPerJobLimit has been exceeded. Basically, you have asked for more time than allowed for the given QOS/Partition. Please have a look at :ref:`Partitions`
 
 
 **Priority vs. Resources**
 
-Priority means that resources are in principle available, but someone else has higher priority in the queue. Resources means the at the moment the requested resources are not available.
+"Priority" means that resources are in principle available, but someone else has higher priority in the queue, i.e. the PoreLab members have priorities in their partitions. 
+"Resources" means the at the moment the requested resources are not available.
 
 
 Why is my job not starting on highmem nodes although the highmem queue is empty?
@@ -270,24 +285,29 @@ Why is my job not starting on highmem nodes although the highmem queue is empty?
 To prevent the highmem nodes from standing around idle, normal jobs may use them as well, using only 32 GB of the available memory. Hence, it is possible that the highmem nodes are busy, although you do not see any jobs queuing or running on `squeue -p highmem`.
 
 
-How can I customize emails that I get after a job has completed?
-----------------------------------------------------------------
+..
+  I have tried to send emails with the HPC but it does not work. Shall we delete this? 
 
-Use the mail command and you can customize it to your liking but make sure
-that you send the email via the login node.
+ How can I customize emails that I get after a job has completed?
+ ----------------------------------------------------------------
 
-As an example, add and adapt the following line at the end of your script::
+ Use the mail command and you can customize it to your liking but make sure
+ that you send the email via the login node.
+
+ As an example, add and adapt the following line at the end of your script::
 
   echo "email content" | ssh stallo-1.local 'mail -s "Job finished: ${SLURM_JOBID}" firstname.lastname@uit.no'
 
+..
+  What about the following?
 
 How can I run many short tasks?
 -------------------------------
 
 The overhead in the job start and cleanup makes it unpractical to run
-thousands of short tasks as individual jobs on Stallo.
+thousands of short tasks as individual jobs on HPC.
 
-The queueing setup on stallo, or rather, the accounting system generates
+The queueing setup, or rather, the accounting system generates
 overhead in the start and finish of a job of about 1 second at each end
 of the job. This overhead is insignificant when running large parallel
 jobs, but creates scaling issues when running a massive amount of

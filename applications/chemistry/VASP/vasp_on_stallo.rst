@@ -67,7 +67,8 @@ About memory allocation for VASP
 
 VASP is known to be potentially memory demanding. Quite often, you might experience to use less than the full number of cores on the node, but still all of the memory.
 
-For core-count, node-count and amounts of memory on Stallo, see :ref:`about_stallo`.
+..
+  _For core-count, node-count and amounts of memory on Stallo, see :ref:`about_stallo`.
 
 There are two important considerations to make:
 

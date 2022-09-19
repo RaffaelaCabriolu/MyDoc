@@ -37,18 +37,19 @@ In the following links you can learn the basics knowledge you need to use a clus
 .. toctree::
    :maxdepth: 1
    :caption: clusters
-.. 
-  clusters/uit-guidelines
+ 
+   clusters/uit-guidelines
 
 
 .. Account section
 .. toctree::
    :maxdepth: 1
    :caption: Account
-..
-   account/account
+
    account/login
-   account/accounting
+   account/linux
+..   account/account
+..   account/accounting
 
 .. Job section
 .. toctree::
@@ -94,9 +95,10 @@ In the following links you can learn the basics knowledge you need to use a clus
 .. toctree::
    :maxdepth: 1
    :caption: Storage
+
+   storage/file_transfer
 ..
    storage/storage
-   storage/file_transfer
    storage/lustre-performance
 
 

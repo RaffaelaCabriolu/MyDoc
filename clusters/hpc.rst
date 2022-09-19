@@ -1,8 +1,8 @@
 .. _hpc:
 
-=========
+
 Local HPC
-=========
+~~~~~~~~~
 
 Resource description
 ====================
@@ -11,7 +11,8 @@ The Department of Physics, IFY, retains an High Performance Computing (HPC) syst
 The cluster is administred according to a queing system, the `Slurm <https://slurm.schedmd.com/documentation.html>`_ scheduler, and, the `Lmod <https://lmod.readthedocs.io/en/latest/index.html>`_ module system. Further explanation on the Slurm and Lmod commands are in the sessions :doc:`/jobs/slurm_parameter` and :doc:`/help/tutorials`. 
 The OSDebian distribution is installed on the machines along with Intel compilers, debugging tools and several licensed softwares.  
 
-.. In addition, there are certain rules and boundaries to be respected.    
+..
+  In addition, there are certain rules and boundaries to be respected.    
    
 
 +----------------------+---------------------------------------------+----------------------------------------------+
@@ -110,7 +111,10 @@ Perform Numerical calculations
 To launch your program, you can use the interactive mode, or you need to write a job script (see the section :doc:`/jobs/slurm_parameter`). In either modes, you define for how long your job (i.e. the program) will reserve the requested resources and how much memory and compute cores it needs. To use the cluster a basic knowledge of the Linux shell scripting is necessary; refer to the session :doc:`/account/linux` for a very short introduction on it.
 Furthermore, refer to the sessions :doc:`/jobs/batch` and :doc:`/jobs/examples` for more instructions on the batch system.
 Every job that gets started will be charged to your quota. Your quota is calculated in hours of CPU time and is connected to your specific project. 
-To see the status of your quota account(s), you can type ``sacct`` and refer to the session: :doc:`/account/accounting`.  
+To see the status of your quota account(s), you can type ``sacct``.
+
+..
+  _and refer to the session: :doc:`/account/accounting`.  
 
 Computing budget 
 ================
