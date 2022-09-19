@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>VASP (Vienna Ab initio Simulation Package) &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>VASP (Vienna Ab initio Simulation Package)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/applications/chemistry/VASP/VASP.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="vasp-vienna-ab-initio-simulation-package">
+<span id="vasp"></span><h1>VASP (Vienna Ab initio Simulation Package)<a class="headerlink" href="#vasp-vienna-ab-initio-simulation-package" title="Permalink to this headline">¶</a></h1>
+<p>Information regarding the Vienna Ab initio Simulation Package (VASP) installed on Stallo.</p>
+<section id="related-information">
+<h2>Related information<a class="headerlink" href="#related-information" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="firsttime_vasp.html">First time you run a VASP job?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vasp_on_stallo.html">About the VASP install on Stallo</a></li>
+</ul>
+</div>
+</section>
+<section id="general-information">
+<h2>General information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h3>
+<p>VASP is a complex package for performing ab-initio quantum-mechanical molecular dynamics (MD) simulations using pseudopotentials or the projector-augmented wave method and a plane wave basis set. The approach implemented in VASP is based on the (finite-temperature) local-density approximation with the free energy as variational quantity and an exact evaluation of the instantaneous electronic ground state at each MD time step.</p>
+<p>VASP uses efficient matrix diagonalisation schemes and an efficient Pulay/Broyden charge density mixing. These techniques avoid all problems possibly occurring in the original Car-Parrinello method, which is based on the simultaneous integration of electronic and ionic equations of motion.</p>
+<p>The interaction between ions and electrons is described by ultra-soft Vanderbilt pseudopotentials (US-PP) or by the projector-augmented wave (PAW) method. US-PP (and the PAW method) allow for a considerable reduction of the number of plane-waves per atom for transition metals and first row elements. Forces and the full stress tensor can be calculated with VASP and used to relax atoms into their instantaneous ground-state.</p>
+<p>There are various type plug ins and added functionality to VASP. On Stallo, we have added support for the Texas transition state tools (<a class="reference external" href="http://theory.cm.utexas.edu/vtsttools/">vTST</a>), the <a class="reference external" href="http://vaspsol.mse.ufl.edu">VASPsol</a> implicit solvation model made by Hennig and Mathew from University of Florida and the <a class="reference external" href="https://suncat.stanford.edu/about/facilities/software">Bayesian Error Estimation Functionals</a> from the SUNCAT center, Standford.</p>
+</section>
+<section id="online-information-from-vendor">
+<h3>Online information from vendor<a class="headerlink" href="#online-information-from-vendor" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Homepage: <a class="reference external" href="https://www.vasp.at">https://www.vasp.at</a></p></li>
+<li><p>Documentation: <a class="reference external" href="https://cms.mpi.univie.ac.at/wiki/index.php/The_VASP_Manual">https://cms.mpi.univie.ac.at/wiki/index.php/The_VASP_Manual</a></p></li>
+</ul>
+</section>
+<section id="license-and-access-policy">
+<h3>License and access policy<a class="headerlink" href="#license-and-access-policy" title="Permalink to this headline">¶</a></h3>
+<p>The VASP license is proprietary and commercial. It is based on group license policy, and for NOTUR systems VASP packages falls in the “bring your own license” category. See <a class="reference internal" href="../../../help/AboutLicenses.html#about-licenses"><span class="std std-ref">General comments about licenses</span></a>.</p>
+<p>The Vasp program is not distributed via site licences. However, HPC-staff in NOTUR have access to the VASP code to be able to support any research groups that have a valid VASP license.</p>
+<p>VASP is a commercial software package that requires a license for all who wants use it. To run VASP:</p>
+<ol class="arabic simple">
+<li><p>Your group must have a valid licence. To acquire a licence, please consult this link: <a class="reference external" href="https://www.vasp.at/index.php/faqs/71-how-can-i-purchase-a-vasp-license">https://www.vasp.at/index.php/faqs/71-how-can-i-purchase-a-vasp-license</a>.</p></li>
+<li><p>We need to get a confirmation from a VASP representative to confirm that you have access to the license. Your group representative needs to contact Dr. Doris Vogtenhuber (<a class="reference external" href="mailto:doris&#46;vogtenhuber&#37;&#52;&#48;univie&#46;ac&#46;at">doris<span>&#46;</span>vogtenhuber<span>&#64;</span>univie<span>&#46;</span>ac<span>&#46;</span>at</a>) from the VASP team and ask her to send a confirmation email to us (<a class="reference external" href="mailto:support&#37;&#52;&#48;metacenter&#46;no">support<span>&#64;</span>metacenter<span>&#46;</span>no</a>) to confirm that you have a valid licence. Once we get a confirmation email we will grant you access to run VASP.</p></li>
+</ol>
+<p>The support people in NOTUR, do not provide trouble shooting guides anymore, due to a national agreement that it is better for the community as a whole to add to the community info/knowledge pool where such is made available. Also, HPC staff from UiT does not provide any support to VASP 4 anymore, basically due to age of the code.</p>
+</section>
+<section id="citation">
+<h3>Citation<a class="headerlink" href="#citation" title="Permalink to this headline">¶</a></h3>
+<p>When publishing results obtained with the referred software referred, please do check the developers web page in order to find the correct citation(s).</p>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>You load the application by typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load VASP
+</pre></div>
+</div>
+<p>This command will give you the default version.</p>
+<p>For more information on available versions, type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module avail VASP
+</pre></div>
+</div>
+<p>Experiencewise, VASP is a rather memory intensive code. Users are advised to read up on the general job script example(s) for SLURM and Stallo, and also how to specify memory in <a class="reference external" href="https://slurm.schedmd.com">SLURM</a>.</p>
+<section id="about-the-vasp-version-s-installed-on-stallo">
+<h3>About the VASP version(s) installed on Stallo<a class="headerlink" href="#about-the-vasp-version-s-installed-on-stallo" title="Permalink to this headline">¶</a></h3>
+<p>Since the installation we made on Stallo is rather taylor made, we have gathered information about this here: <a class="reference internal" href="vasp_on_stallo.html"><span class="doc">About the VASP install on Stallo</span></a>.</p>
+<p>Here we also adress compilation relevant information for those who would like to do it themselves.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux command line &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Linux command line</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/account/linux.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="linux-command-line">
+<h1>Linux command line<a class="headerlink" href="#linux-command-line" title="Permalink to this headline">¶</a></h1>
+<section id="new-on-linux-systems">
+<h2>New on Linux systems?<a class="headerlink" href="#new-on-linux-systems" title="Permalink to this headline">¶</a></h2>
+<p>This page contains information intended
+for both users that are new to HPC_IFY and for users that are new to
+Linux/UNIX-like operating systems. Please consult the rest of the user guide
+for information that is not covered in this chapter.</p>
+<p>To find out more about the storage and file systems on the machines, your disk
+quota, how to manage data, and how to transfer file to/from HPC_IFY, please read
+the <a class="reference internal" href="../storage/file_transfer.html#file-transfer"><span class="std std-ref">Transferring files to/from HPC_IFY</span></a> section.</p>
+<section id="ssh">
+<h3>ssh<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h3>
+<p>The only way to connect to the HPC_IFY is by using ssh. Check
+the <a class="reference internal" href="login.html"><span class="doc">Logging in for the first time</span></a> in this documentation to learn more about ssh.</p>
+</section>
+<section id="scp">
+<h3>scp<a class="headerlink" href="#scp" title="Permalink to this headline">¶</a></h3>
+<p>The machines are stand-alone systems. The machines do not (NFS-)mount remote
+disks. Therefore you must explicitly transfer any files you wish to use to the
+machine by scp. For more info, see <a class="reference internal" href="../storage/file_transfer.html#file-transfer"><span class="std std-ref">Transferring files to/from HPC_IFY</span></a>.</p>
+</section>
+<section id="running-jobs-on-the-machine">
+<h3>Running jobs on the machine<a class="headerlink" href="#running-jobs-on-the-machine" title="Permalink to this headline">¶</a></h3>
+<p>You must execute your jobs by submitting them to the batch system. There is a
+dedicated section <a class="reference internal" href="../jobs/batch.html"><span class="doc">Batch system</span></a> in our user guide that explain how to use the
+batch system. The pages explains how to write job scripts, and how to submit,
+manage, and monitor jobs. It is not allowed to run long or large memory jobs
+interactively (i.e., directly from the command line).</p>
+</section>
+<section id="common-commands">
+<h3>Common commands<a class="headerlink" href="#common-commands" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>pwd</dt><dd><p>Provides the full pathname of the directory you are currently in.</p>
+</dd>
+<dt>cd</dt><dd><p>Change the current working directory.</p>
+</dd>
+<dt>ls</dt><dd><p>List the files and directories which are located in the directory you are currently in.</p>
+</dd>
+<dt>find</dt><dd><p>Searches through one or more directory trees of a file system, locates files based on some user-specified
+criteria and applies a user-specified action on each matched file. e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="n">name</span> <span class="s1">&#39;my*&#39;</span> <span class="o">-</span><span class="nb">type</span> <span class="n">f</span>
+</pre></div>
+</div>
+<p>The above command searches in the current directory (.) and below it, for files and directories with names starting with my.
+“-type f” limits the results of the above search to only regular files, therefore excluding directories,
+special files, pipes, symbolic links, etc. my* is enclosed in single quotes (apostrophes) as otherwise the
+shell would replace it with the list of files in the current directory starting with “my”.</p>
+</dd>
+<dt>grep</dt><dd><p>Find a certain expression in one or more files, e.g:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grep</span> <span class="n">apple</span> <span class="n">fruitlist</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</dd>
+<dt>mkdir</dt><dd><p>Create new directory.</p>
+</dd>
+<dt>rm</dt><dd><p>Remove a file. Use with caution.</p>
+</dd>
+<dt>rmdir</dt><dd><p>Remove a directory. Use with caution.</p>
+</dd>
+<dt>mv</dt><dd><p>Move or rename a file or directory.</p>
+</dd>
+<dt>vi/vim or emacs</dt><dd><p>Edit text files, see below.</p>
+</dd>
+<dt>less/ more</dt><dd><p>View (but do not change) the contents of a text file one screen at a time, or, when combined with other commands (see below)
+view the result of the command one screen at a time. Useful if a command prints several screens of information on
+your screen so quickly, that you don’t manage to read the first lines before they are gone.</p>
+</dd>
+<dt>|</dt><dd><p>Called “pipe” or “vertical bar” in English. Group 2 or more commands together, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">key</span> <span class="o">|</span> <span class="n">less</span>
+</pre></div>
+</div>
+<p>This will list files in the current directory (ls), retain only the lines of <em>ls</em> output containing the string “key” (grep),
+and view the result in a scrolling page (less).</p>
+</dd>
+</dl>
+</section>
+<section id="more-info-on-manual-pages">
+<h3>More info on manual pages<a class="headerlink" href="#more-info-on-manual-pages" title="Permalink to this headline">¶</a></h3>
+<p>If you know the UNIX-command that you would like to
+use but not the exact syntax, consult the manual pages on the system to
+get a brief overview. Use ‘man [command]’ for this. For example, to
+get the right options to display the contents of a directory, use ‘man
+ls’. To choose the desired options for showing the current status of
+processes, use ‘man ps’.</p>
+</section>
+<section id="text-editing">
+<h3>Text editing<a class="headerlink" href="#text-editing" title="Permalink to this headline">¶</a></h3>
+<p>Popular tools for editing files on Linux/UNIX-based
+systems are ‘vi’ and ‘emacs’. Unfortunately the commands within both
+editors are quite cryptic for beginners. It is probably wise to spend
+some time understanding the basic editing commands before starting to
+program the machine.</p>
+<dl class="simple">
+<dt>vi/vim</dt><dd><p>Full-screen editor. Use ‘man vi’ for quick help.</p>
+</dd>
+<dt>emacs</dt><dd><p>Comes by default with its own window. Type ‘emacs -nw’ to
+invoke emacs in the active window. Type ‘Control-h i’ or follow the
+menu ‘Help-&gt;manuals-&gt;browse-manuals-with-info’ for help. ‘Control-h
+t’ gives a tutorial for beginners.</p>
+</dd>
+</dl>
+</section>
+<section id="environment-variables">
+<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>The following variables are automatically available after you log in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$USER     your account name
+$HOME     your home directory
+$PWD      your current directory
+</pre></div>
+</div>
+<p>You can use these variables on the command line or in shell scripts by
+typing $USER, $HOME, etc. For instance: ‘echo $USER’. A complete
+listing of the defined variables and their meanings can be obtained by
+typing ‘printenv  ‘.</p>
+<p>You can define (and redefine) your own variables by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">VARIABLE</span><span class="o">=</span><span class="n">VALUE</span>
+</pre></div>
+</div>
+</section>
+<section id="aliases">
+<h3>Aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h3>
+<p>If you frequently use a command that
+is long and has for example many options to it, you can put an alias
+(abbreviation) for it in your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file. For example, if you
+normally prefer a long listing of the contents of a directory with the
+command ‘ls -laF  | more’, you can put following line in your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">ll</span><span class="o">=</span><span class="s1">&#39;ls -laF | more&#39;</span>
+</pre></div>
+</div>
+<p>You must run ‘source ~/.bashrc’ to update your
+environment and to make the alias effective, or log out and in :-). From
+then on, the command ‘ll’ is equivalent to ‘ls -laF  | more’.
+Make sure that the chosen abbreviation is not already an existing
+command, otherwise you may get unexpected (and unwanted) behavior. You
+can check the existence and location of a program, script, or alias by
+typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+<span class="n">whereis</span> <span class="p">[</span><span class="n">command</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="bin">
+<h3>~/bin<a class="headerlink" href="#bin" title="Permalink to this headline">¶</a></h3>
+<p>If you frequently use a self-made or self-installed program or script that you
+use in many different directories, you can create a directory ~/bin in which
+you put this program/script. If that directory does not already exist, you can
+do the following. Suppose your favorite little program is called ‘myscript’ and is
+in your home ($HOME) directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir -p $HOME/bin
+cp myscript $HOME/bin
+export PATH=$PATH:$HOME/bin
+</pre></div>
+</div>
+<p>PATH is a colon-separated list of directories that are searched in the
+order in which they are specified whenever you type a command. The first
+occurrence of a file (executable) in a directory in this PATH variable
+that has the same name as the command will be executed (if possible). In
+the example above, the ‘export’ command adds the ~/bin directory to
+the PATH variable and any executable program/script you put in the
+~/bin directory will be recognized as a command. To add the ~/bin
+directory permanently to your PATH variable, add the above
+‘export’ command to your ~/.bashrc file and update your environment
+with ‘source ~/.bashrc’.</p>
+<p>Make sure that the names of the programs/scripts are not already
+existing commands, otherwise you may get unexpected (and unwanted)
+behaviour. You can check the contents of the PATH variable by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>printenv PATH
+echo $PATH
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

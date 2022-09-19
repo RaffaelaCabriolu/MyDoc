@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Monitoring your jobs &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running MPI jobs" href="running_mpi_jobs.html" />
+    <link rel="prev" title="Managing jobs" href="job_management.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="job_management.html">Managing jobs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Monitoring your jobs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#slurm-commands">SLURM commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cpu-load-and-memory-consumption-of-your-job">CPU load and memory consumption of your job</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-slurmbrowser">Accessing slurmbrowser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detecting-inefficient-jobs">Detecting inefficient jobs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-job-status">Understanding your job status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary-of-used-resources">Summary of used resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Monitoring your jobs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/jobs/monitoring.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="monitoring-your-jobs">
+<span id="monitoring-jobs"></span><h1>Monitoring your jobs<a class="headerlink" href="#monitoring-your-jobs" title="Permalink to this headline">¶</a></h1>
+<section id="slurm-commands">
+<h2>SLURM commands<a class="headerlink" href="#slurm-commands" title="Permalink to this headline">¶</a></h2>
+<p>To monitor your jobs, you can use of of those commands. For details run them
+with the <cite>-</cite>-help option:</p>
+<p><code class="docutils literal notranslate"><span class="pre">scontrol</span> <span class="pre">show</span> <span class="pre">jobid</span> <span class="pre">-dd</span> <span class="pre">&lt;jobid&gt;</span></code> lists detailed information for a job (useful for troubleshooting).</p>
+<p><code class="docutils literal notranslate"><span class="pre">sacct</span> <span class="pre">-j</span> <span class="pre">&lt;jobid&gt;</span> <span class="pre">--format=JobID,JobName,MaxRSS,Elapsed</span></code> will give you
+statistics on completed jobs by jobID. Once your job has
+completed, you can get additional information that was not available during
+the run. This includes run time, memory used, etc.</p>
+<p>From our monitoring tool Ganglia, you can watch live status information
+on Stallo:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://stallo-adm.uit.no/ganglia/">Load situation</a></p></li>
+<li><p><a class="reference external" href="http://stallo-login2.uit.no/slurmbrowser/html/squeue.html">Job queue</a></p></li>
+</ul>
+</section>
+<section id="cpu-load-and-memory-consumption-of-your-job">
+<h2>CPU load and memory consumption of your job<a class="headerlink" href="#cpu-load-and-memory-consumption-of-your-job" title="Permalink to this headline">¶</a></h2>
+<p>Stallo has only limited resources and usually a high demand.
+Therefore using the available resources as efficient as possible is paramount to have short queueing times
+and getting most out of your quota.</p>
+<section id="accessing-slurmbrowser">
+<h3>Accessing slurmbrowser<a class="headerlink" href="#accessing-slurmbrowser" title="Permalink to this headline">¶</a></h3>
+<p>In order to find out the CPU load and memory consumption of your running jobs or jobs
+which have finished less than 48 hours ago, please use the <a class="reference external" href="http://stallo-login2.uit.no/slurmbrowser/html/squeue.html">job browser</a> (accessible from within the UNINETT
+network).</p>
+<p>For users from outside of UNINETT, you have to setup a ssh tunnel to stallo with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="o">-</span><span class="n">L8080</span><span class="p">:</span><span class="n">localhost</span><span class="p">:</span><span class="mi">80</span> <span class="n">stallo</span><span class="o">-</span><span class="n">login2</span><span class="o">.</span><span class="n">uit</span><span class="o">.</span><span class="n">no</span>
+</pre></div>
+</div>
+<p>After that you can access slurmbrowser at <a class="reference external" href="http://localhost:8080/slurmbrowser/html/squeue.html">http://localhost:8080/slurmbrowser/html/squeue.html</a></p>
+</section>
+<section id="detecting-inefficient-jobs">
+<h3>Detecting inefficient jobs<a class="headerlink" href="#detecting-inefficient-jobs" title="Permalink to this headline">¶</a></h3>
+<p>You can filter for a slurm job ID, account name or user name with the search bar in the upper left corner.</p>
+<p>For single- or multinode jobs the <code class="docutils literal notranslate"><span class="pre">AvgNodeLoad</span></code> is an important indicator if your jobs runs efficiently,
+at least with respect to CPU usage. If you use the whole node, the average node load should be close to number
+of CPU cores of that node (so 16 or 20 on Stallo).
+In some cases it is totally acceptable to have a low load if you for instance need a lot of memory but in general
+either CPU or memory load should be high.
+Otherwise you are wasting your quota and experience probably longer than necessary queuing times.</p>
+<p>If you detect inefficient jobs you either look for ways to improve the resource usage of your job or ask for less
+resources in your SLURM script.</p>
+</section>
+</section>
+<section id="understanding-your-job-status">
+<span id="job-status"></span><h2>Understanding your job status<a class="headerlink" href="#understanding-your-job-status" title="Permalink to this headline">¶</a></h2>
+<p>When you look at the job queue through the <a class="reference external" href="http://stallo-login2.uit.no/slurmbrowser/html/squeue.html">job browser</a>, or you use the
+<code class="docutils literal notranslate"><span class="pre">squeue</span></code> command, you will see that the queue is divided in 3 parts: Active
+jobs, Idle jobs, and Blocked jobs.</p>
+<p>Active jobs are the jobs that are running at the moment. Idle jobs are next in
+line to start running, when the needed resources become available. Each user
+can by default have only one job in the Idle Jobs queue.</p>
+<p>Blocked jobs are all other jobs. Their state can be <em>Idle</em>, <em>Hold</em>, or
+<em>Deferred</em>. <em>Idle</em> means that they are waiting to get to the Idle queue. They
+will eventually start when the resources become available. The jobs with the
+<em>Hold</em> state have been put on hold either by the system, or by the user. F.e.
+if you have one job in the Idle queue, that is not very important to you, and
+it is blocking other, more urgent, jobs from starting, you might want to put
+that one job on hold. Jobs on hold will not start until the hold is released.
+<em>Deferred</em> jobs will not start. In most cases, the job is deferred because it
+is asking for a combination of resources that Stallo can not provide.</p>
+<p>Please contact the support staff, if you don’t understand why your job has a
+hold or deferred state.</p>
+</section>
+<section id="summary-of-used-resources">
+<h2>Summary of used resources<a class="headerlink" href="#summary-of-used-resources" title="Permalink to this headline">¶</a></h2>
+<p>Slurm will append a summary of used resources to the <code class="docutils literal notranslate"><span class="pre">slurm-xxx.out</span></code> file. The fields are:</p>
+<ul class="simple">
+<li><p>Task and CPU usage stats</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">AllocCPUS</span></code>: Number of allocated CPUs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NTasks</span></code>: Total number of tasks in a job or step.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MinCPU</span></code>: Minimum CPU time of all tasks in job (system + user).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MinCPUTask</span></code>: The task ID where the mincpu occurred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AveCPU</span></code>: Average CPU time of all tasks in job (system + user)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Elapsed</span></code>: The jobs elapsed time in format [DD-[HH:]]MM:SS.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ExitCode</span></code>: The exit code returned by the job script. Following the colon is the signal that caused the process to terminate if it was terminated by a signal.</p></li>
+</ul>
+</li>
+<li><p>Memory usage stats</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxRSS</span></code>: Maximum resident set size of all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxRSSTask</span></code>: The task ID where the maxrss occurred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AveRSS</span></code>: Average resident set size of all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxPages</span></code>: Maximum number of page faults of all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxPagesTask</span></code>: The task ID where the maxpages occurred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AvePages</span></code>: Average number of page faults of all tasks in job.</p></li>
+</ul>
+</li>
+<li><p>Disk usage stats</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxDiskRead</span></code>: Maximum number of bytes read by all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxDiskReadTask</span></code>: The task ID where the maxdiskread occurred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AveDiskRead</span></code>: Average number of bytes read by all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxDiskWrite</span></code>: Maximum number of bytes written by all tasks in job.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxDiskWriteTask</span></code>: The task ID where the maxdiskwrite occurred.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AveDiskWrite</span></code>: Average number of bytes written by all tasks in job.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="running_mpi_jobs.html" class="btn btn-neutral float-right" title="Running MPI jobs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="job_management.html" class="btn btn-neutral float-left" title="Managing jobs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Module Scheme &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Software Module Scheme</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/software/modules.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="software-module-scheme">
+<span id="module-scheme"></span><h1>Software Module Scheme<a class="headerlink" href="#software-module-scheme" title="Permalink to this headline">¶</a></h1>
+<p>Since a HPC cluster is shared among many users, and also holds a significant size in contrast to most desktop compute machinery around, the amount of installed software spans many applications in many different versions and quite a few of them are installed typically non-standard places for easier maintenance (for admin crew), practical and security reasons. It is not possible (nor
+desirable) to use them all at the same time, since different versions of the
+same application may conflict with each other. Therefore, it is practical to provide the production environment for a given application outside of the application itself. This is done using a set of instructions and variable settings that are specific for the given application called an application module. This also simplifies control of which application versions are available in a specific session.</p>
+<p>We are also using the Easybuild system for installing software on Stallo (see <a class="reference external" href="https://easybuilders.github.io/easybuild/">https://easybuilders.github.io/easybuild/</a>).</p>
+<p>The main command for using this system is the <em>module</em> command. You can find a
+list of all its options by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>We use the lmod module system; for more info see <a class="reference external" href="https://lmod.readthedocs.io/en/latest/">https://lmod.readthedocs.io/en/latest/</a> on Stallo. Below we listed the most commonly used options, but also feel free to ivestigate options in this toolset more thoroughly on developers site.</p>
+<section id="which-modules-are-currently-loaded">
+<h2>Which modules are currently loaded?<a class="headerlink" href="#which-modules-are-currently-loaded" title="Permalink to this headline">¶</a></h2>
+<p>To see the modules currently active in your session, use the
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
+<section id="which-modules-are-available">
+<h2>Which modules are available?<a class="headerlink" href="#which-modules-are-available" title="Permalink to this headline">¶</a></h2>
+<p>In order to see a complete list of available modules, issue the
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">avail</span>
+</pre></div>
+</div>
+<p>The resulting list will contain module names conforming to the following
+pattern:</p>
+<ul class="simple">
+<li><p>name of the module</p></li>
+<li><p>/</p></li>
+<li><p>version</p></li>
+<li><p>(default) if default version</p></li>
+</ul>
+</section>
+<section id="how-to-load-a-module">
+<h2>How to load a module<a class="headerlink" href="#how-to-load-a-module" title="Permalink to this headline">¶</a></h2>
+<p>In order to make, for instance, the NetCDF library available issue the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">netCDF</span>
+</pre></div>
+</div>
+<p>This will load the default NetCDF version. To load a specific version,
+just include the version after a slash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">netCDF</span><span class="o">/</span><span class="mf">4.3.3.1</span><span class="o">-</span><span class="n">intel</span><span class="o">-</span><span class="mi">2016</span><span class="n">a</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-unload-a-module">
+<h2>How to unload a module<a class="headerlink" href="#how-to-unload-a-module" title="Permalink to this headline">¶</a></h2>
+<p>Keeping with the above example, use the following command to unload the
+NetCDF module again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">unload</span> <span class="n">netcdf</span>
+</pre></div>
+</div>
+</section>
+<section id="which-version-of-a-module-is-the-default">
+<h2>Which version of a module is the default?<a class="headerlink" href="#which-version-of-a-module-is-the-default" title="Permalink to this headline">¶</a></h2>
+<p>In order to see, for instance, which version of NetCDF is loaded by the
+module, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">show</span> <span class="n">netcdf</span>
+</pre></div>
+</div>
+<p>This will show the version and path of the module.</p>
+</section>
+<section id="how-do-i-switch-to-a-different-version-of-a-module">
+<h2>How do I switch to a different version of a module?<a class="headerlink" href="#how-do-i-switch-to-a-different-version-of-a-module" title="Permalink to this headline">¶</a></h2>
+<p>Switching to another version is similar to loading a specific version.  As an
+example, if you want to switch from the default (current) Intel compilers
+version to version 2016b (aka 2016.3), type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">switch</span> <span class="n">intel</span> <span class="n">intel</span><span class="o">/</span><span class="mi">2016</span><span class="n">b</span>
+</pre></div>
+</div>
+<p><strong>Beware: by default on Stallo, you are not able to have two conflicting modules - f.e. openmpi and impi - loaded at the same time.</strong> This is only partially true for these new packages. With the new packages it is also more common that when you load one package it will automatically load several other packages that it needs to function. We recommend doing ml after every load and unloading any conflicting packages.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

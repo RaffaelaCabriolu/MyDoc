@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Debugging &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Debugging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/development/debugging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="debugging">
+<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<section id="debugging-with-totalview">
+<h2>Debugging with TotalView<a class="headerlink" href="#debugging-with-totalview" title="Permalink to this headline">¶</a></h2>
+<p>TotalView is a graphical, source-level, multiprocess debugger.  It is the
+primary debugger on Stallo and has excellent capabilities for debugging
+parallel programs.  When using this debugger you need to turn on X-forwarding,
+which is done when you login via ssh. This is done by adding the -Y on newer
+ssh version, and -X on older:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ssh -Y username@stallo.uit.no
+</pre></div>
+</div>
+<p>The program you want to debug has to be compiled with the debug option.
+This is the “-g” option, on Intel and most compilers. The executable
+from this compilation will in the following examples be called
+“filename”.</p>
+<p>First, load the totalview module to get the correct environment
+variables set:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load TotalView
+</pre></div>
+</div>
+<p>To start debugging run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ totalview MyProg
+</pre></div>
+</div>
+<p>Which will start a graphical user interface.</p>
+<p>Once inside the debugger, if you cannot see any source code, and keep the
+source files in a separate directory, add the search path to this directory via
+the main menu item File-&gt;Search path.</p>
+<p>Source lines where it is possible to insert a breakpoint are marked with a box
+in the left column. Click on a box to toggle a breakpoint.</p>
+<p>Double clicking a function/subroutine name in a source file should open the
+source file. You can go back to the previous view by clicking on the left arrow
+on the top of the window.</p>
+<p>The button “Go” runs the program from the beginning until the first breakpoint.
+“Next” and “Step” takes you one line / statement forward.  “Out” will continue
+until the end of the current subroutine/function.  “Run to” will continue until
+the next breakpoint.</p>
+<p>The value of variables can be inspected by right clicking on the name, then
+choose “add to expression list”. The variable will now be shown in a pop up
+window. Scalar variables will be shown with their value, arrays with their
+dimensions and type. To see all values in the array, right click on the
+variable in the pop up window and choose “dive”. You can now scroll through the
+list of values. Another useful option is to visualize the array: after choosing
+“dive”, open the menu item “Tools-&gt;Visualize” of the pop up window. If you did
+this with a 2D array, use middle button and drag mouse to rotate the surface
+that popped up, shift+middle button to pan, Ctrl+middle button to zoom in/out.</p>
+<p>Running totalview on an interactive node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir -p /global/work/$USER/test_dir
+$ cp $HOME/test_dir/a.out /global/work/$USER/test_dir
+$ cd /global/work/$USER/test_dir
+$ module load TotalView
+$ totalview a.out
+</pre></div>
+</div>
+<p>Replace [#procs] with the core-count for the job.</p>
+<p>A window with name “New Program” should pop up. Under “Program” write
+the name of the executable. Under “Parallel” choose “Open MPI” and
+“Tasks” is the number of cores you are using ([#procs]).</p>
+<p>You can also start Totalview with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mpirun -tv a.out
+</pre></div>
+</div>
+<p>The users guide and the quick start quide for Totalview can be found
+on the <a class="reference external" href="https://support.roguewave.com/documentation/tvdocs/en/current">RogueWave documentation page</a>.</p>
+</section>
+<section id="debugging-with-valgrind">
+<h2>Debugging with Valgrind<a class="headerlink" href="#debugging-with-valgrind" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A memory error detector</p></li>
+<li><p>A thread error detector</p></li>
+<li><p>A MPI error detector</p></li>
+<li><p>A cache and branch-prediction profiler</p></li>
+<li><p>A call-graph generating cache profiler</p></li>
+<li><p>A heap profiler</p></li>
+<li><p>Very easy to use</p></li>
+</ul>
+<p>Valgrind is the best thing for developers since the invention of pre-sliced
+bread!</p>
+<p>Valgrind works by emulating one or more CPUs. Hence it can intercept and
+inspect your unmodified, running program in ways which would not be otherwise
+possible. It can for example check that all variables have actually been
+assigned before use, that all memory references are within their allowed space,
+even for static arrays and arrays on the stack.</p>
+<p>What makes Valgrind so extremely powerful is that it will tell exactly where in
+the program a problem, error or violation occurred. It will also give you
+information on how many allocates/deallocates the program performed, and
+whether there is any unreleased memory or memory leaks at program exit. In
+fact, it goes even further and will tell you on what line the
+unreleased/leaking memory was allocated. The cache profiler will give you
+information about cache misses and where they occur.</p>
+<p>The biggest downside to Valgrind is that it will make your program run much
+slower. How much slower depends on what kind of, and how much, information you
+request. Typically the program will run 10-100 times slower under Valgrind.</p>
+<p>Simply start Valgrind with
+the path to the binary program to be tested:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load Valgrind
+$ valgrind /path/to/prog
+</pre></div>
+</div>
+<p>This runs Valgrind with the default “tool” which is called memcheck, which
+checks memory consistency. When run without any extra flags, Valgrind will
+produce a balanced, not overly detailed and informative output. If you need a
+more detailed (but slower) report, run Valgrind with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ valgrind --leak-check=full --track-origins=yes --show-reachable=yes /path/to/prog
+</pre></div>
+</div>
+<p>Of course, if you want to get all possible information about where in the
+program something was inconsistent you must compile the program with debugging
+flags switched on.</p>
+<p>If you have a multi-threaded program (e.g. OpenMP, pthreads), and you are
+unsure if there might be possible deadlocks or data races lurking in your
+program, the Valgrind thread checker is your best friend. The thread checking
+tool is called helgrind:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ export OMP_NUM_THREADS=2
+$ valgrind --tool=helgrind /path/to/prog
+</pre></div>
+</div>
+<p>For more information on using Valgrind please refer to the man pages and the
+Valgrind manual which can be found on the Valgrind website:
+<a class="reference external" href="http://www.valgrind.org">http://www.valgrind.org</a></p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

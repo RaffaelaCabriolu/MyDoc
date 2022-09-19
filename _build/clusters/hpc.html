@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Local HPC &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Idun shareholder" href="idun.html" />
+    <link rel="prev" title="Getting started" href="getting_started.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="getting_started.html">Getting started</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Local HPC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resource-description">Resource description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-the-hpc-cluster">Connect to the HPC cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-systems-and-data-back-up">File Systems and data Back-up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partitions">Partitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#available-modules-and-software">Available modules and software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perform-numerical-calculations">Perform Numerical calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#computing-budget">Computing budget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#policies">Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-retention-policies">Data Retention Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fair-usage-of-shared-resources">Fair Usage of Shared Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="idun.html">Idun shareholder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid.html">Grid system (Linux cluster)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#login-accounts">login-accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#connect-to-a-cluster">Connect to a cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#on-login-nodes">On login nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#get-help">Get help</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="getting_started.html">Getting started</a> &raquo;</li>
+        
+      <li>Local HPC</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/clusters/hpc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="local-hpc">
+<span id="hpc"></span><h1>Local HPC<a class="headerlink" href="#local-hpc" title="Permalink to this headline">¶</a></h1>
+<section id="resource-description">
+<h2>Resource description<a class="headerlink" href="#resource-description" title="Permalink to this headline">¶</a></h2>
+<p>The Department of Physics, IFY, retains an High Performance Computing (HPC) system, HPC_IFY, for debugging, testing purposes and, small projects. For long production projects we suggest to apply to national, i.e. IDUN or NOTUR, or international infrastructures, i.e. PRACE production access. Despite to be developed for small computational projects that have a limited running time, IFY decided to not limit the accessibility to the cluster.
+The cluster is administred according to a queing system, the <a class="reference external" href="https://slurm.schedmd.com/documentation.html">Slurm</a> scheduler, and, the <a class="reference external" href="https://lmod.readthedocs.io/en/latest/index.html">Lmod</a> module system. Further explanation on the Slurm and Lmod commands are in the sessions <a class="reference internal" href="../jobs/slurm_parameter.html"><span class="doc">SLURM Workload Manager</span></a> and <a class="reference internal" href="../help/tutorials.html"><span class="doc">Tutorials</span></a>.
+The OSDebian distribution is installed on the machines along with Intel compilers, debugging tools and several licensed softwares.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 40%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>Cumulative</p></th>
+<th class="head"><p>Per node</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+<div class="line">#Nodes</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">5 x Dell  PowerEdge R740</div>
+<div class="line">5 x Dell  PowerEdge R640</div>
+<div class="line">6 x Dell  PowerEdge R640</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">1 x Dell  PowerEdge R740</div>
+<div class="line">1 x Dell  PowerEdge R640</div>
+<div class="line">1 x Dell  PowerEdge R640</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><br /></div>
+<div class="line">#CPU’s/# Cores</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">10/80</div>
+<div class="line">10/80</div>
+<div class="line">12/120</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">2/16</div>
+<div class="line">2/16</div>
+<div class="line">2/20</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+<div class="line">Processors</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">10xIntel(R) Xeon(R) Gold</div>
+<div class="line">10xIntel(R) Xeon(R) Gold</div>
+<div class="line">12xIntel(R) Xeon(R) Gold</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">2xIntel(R) Xeon(R) Gold 5218 CPU &#64; 2.30GHz</div>
+<div class="line">2xIntel(R) Xeon(R) Gold 5218 CPU &#64; 2.30GHz</div>
+<div class="line">2xIntel(R) Xeon(R) Gold 5218R CPU &#64; 2.10GHz</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Total memory</p></td>
+<td><p>2 TB</p></td>
+<td><p>128   GB</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal storage</p></td>
+<td><p>7 TB</p></td>
+<td><p>447   GB  (SSD disk)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Centralized storage</p></td>
+<td><p>3.5 TB</p></td>
+<td><p>3.5 TB</p></td>
+</tr>
+<tr class="row-even"><td><p>Interconnect</p></td>
+<td><p>10 Gigabit Ethernet</p></td>
+<td><p>10 Gigabit Ethernet</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 38%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Compute racks</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>All nodes in the cluster are connected with Gigabit Ethernet and hyperthreading is enabled.</p>
+<p>For further information and technical assistance, refer to the technical responsible of the HPC Local cluster,
+Egil Holvik at <a class="reference external" href="mailto:support-kongull&#37;&#52;&#48;hpc&#46;ntnu&#46;no">support-kongull<span>&#64;</span>hpc<span>&#46;</span>ntnu<span>&#46;</span>no</a>.</p>
+</section>
+<section id="connect-to-the-hpc-cluster">
+<h2>Connect to the HPC cluster<a class="headerlink" href="#connect-to-the-hpc-cluster" title="Permalink to this headline">¶</a></h2>
+<p>To request access to the HPC local cluster contact <a class="reference external" href="https://www.ntnu.no/ansatte/egil.holvik">Egil Holvik</a>.
+The HPC system can be reached through ssh via: <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;hpc-1.phys.ntnu.no</span></code> or <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">username&#64;hpc-2.phys.ntnu.no</span></code>. Refer to the session
+<a class="reference internal" href="../account/login.html"><span class="doc">Logging in for the first time</span></a> for examples and further explanation on the ssh protocol.</p>
+</section>
+<section id="file-systems-and-data-back-up">
+<h2>File Systems and data Back-up<a class="headerlink" href="#file-systems-and-data-back-up" title="Permalink to this headline">¶</a></h2>
+<p>Different file systems are supported and summarized in the following table:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"></th>
+<th class="head"><p>/home</p></th>
+<th class="head"><p>/worko</p></th>
+<th class="head"><p>/work</p></th>
+<th class="head"><p>/scratch</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>NFS</p></td>
+<td><p>NFS</p></td>
+<td><p>NFS</p></td>
+<td><p>NFS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data-Backup</p></td>
+<td><p>Daily</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-even"><td><p>Access Speed</p></td>
+<td><p>Slow</p></td>
+<td><p>Slow</p></td>
+<td><p>Fast</p></td>
+<td><p>Fast</p></td>
+</tr>
+</tbody>
+</table>
+<p>Data belonging to active accounts in the file system /home are under-backup. There is no backup for data under the /work, /worko and /scratch filesystem, therefore no data recovery is possible in case of accidental loss or for data deleted due to the cleaning policy implemented on this filesystem. The user should use /scratch and /work for computing while /home and /worko as storage and processing folders. Additionally, /home is a backed-up shared folder to which you can access on whatever ntnu login system you use, this mean it is particularly handy to save your definitive data there.
+To move files from your computer to the Local HPC or vice versa, you may use any tool that works with <em>ssh</em>. On Linux and OSX, these are scp, rsync, or similar programs. On Windows, you may use WinSCP. Follow the session <a class="reference internal" href="../storage/file_transfer.html"><span class="doc">Transferring files to/from HPC_IFY</span></a> for more details.</p>
+</section>
+<section id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<p>In the HPC_IFY we have the following partitions:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 32%" />
+<col style="width: 17%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Partition</p></th>
+<th class="head"><blockquote>
+<div><p>Time-limit</p>
+</div></blockquote>
+<p>(dd-hs:min:sec)</p>
+</th>
+<th class="head"><p>Nodes</p></th>
+<th class="head"><blockquote>
+<div><p>Job</p>
+</div></blockquote>
+<p>size</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>normal*</p></td>
+<td><p>7-00:00:00</p></td>
+<td><p>5</p></td>
+<td><p>1-inf</p></td>
+</tr>
+<tr class="row-odd"><td><p>norma2</p></td>
+<td><p>5-00:00:00</p></td>
+<td><p>6</p></td>
+<td><p>1-inf</p></td>
+</tr>
+<tr class="row-even"><td><p>short</p></td>
+<td><p>1:00:00</p></td>
+<td><p>15</p></td>
+<td><p>1-inf</p></td>
+</tr>
+<tr class="row-odd"><td><p>long</p></td>
+<td><p>25-00:00:0</p></td>
+<td><p>5</p></td>
+<td><p>1-3</p></td>
+</tr>
+<tr class="row-even"><td><p>PoreLab</p></td>
+<td><p>14-00:00:0</p></td>
+<td><p>5</p></td>
+<td><p>1-inf</p></td>
+</tr>
+</tbody>
+</table>
+<p>To have more informations about the different partitions, you can type <code class="docutils literal notranslate"><span class="pre">sinfo</span> <span class="pre">-l</span></code> after having logged to the HPC_IFY machines.</p>
+<p>There are no limitations on the number of running jobs per user for all except for the partition long. For the rest, CPUs, jobs and memory are limited by the batch system in function of the available resources. The PoreLab nodes belong to the <a class="reference external" href="https://porelab.no/">PoreLab</a> center of excellence and their affiliated members have priority on those nodes.</p>
+</section>
+<section id="available-modules-and-software">
+<h2>Available modules and software<a class="headerlink" href="#available-modules-and-software" title="Permalink to this headline">¶</a></h2>
+<p>There are many softwares and modules pre-installed. After having login into a machine, you may get a list of all modules by typing <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">avail</span></code> in the terminal. You can also search for a specific module using the spider tool, e.g. <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">spider</span> <span class="pre">intel</span></code> will search for the available intel compilers. Once found the module of choice, you may load it using <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">intel-compilers/2021.1.2</span></code>. For more details on the module system refer to the documentation <a class="reference external" href="https://lmod.readthedocs.io/en/latest/index.html">Lmod</a> .
+Once you have loaded the necessary modules, all files and dependencies will now be available, i.e. you can now simply call <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-version</span></code> to run python and check the loaded version. You can also compile your own software, if necessary, following the instructions in <a class="reference internal" href="../software/modules.html"><span class="doc">Software Module Scheme</span></a>.
+To search for a program, utility or function you can use the interface <a class="reference external" href="https://man7.org/linux/man-pages/man1/man.1.html">man</a> typing <code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">python</span></code>.</p>
+</section>
+<section id="perform-numerical-calculations">
+<h2>Perform Numerical calculations<a class="headerlink" href="#perform-numerical-calculations" title="Permalink to this headline">¶</a></h2>
+<p>To launch your program, you can use the interactive mode, or you need to write a job script (see the section <a class="reference internal" href="../jobs/slurm_parameter.html"><span class="doc">SLURM Workload Manager</span></a>). In either modes, you define for how long your job (i.e. the program) will reserve the requested resources and how much memory and compute cores it needs. To use the cluster a basic knowledge of the Linux shell scripting is necessary; refer to the session <a class="reference internal" href="../account/linux.html"><span class="doc">Linux command line</span></a> for a very short introduction on it.
+Furthermore, refer to the sessions <a class="reference internal" href="../jobs/batch.html"><span class="doc">Batch system</span></a> and <a class="reference internal" href="../jobs/examples.html"><span class="doc">Job script examples</span></a> for more instructions on the batch system.
+Every job that gets started will be charged to your quota. Your quota is calculated in hours of CPU time and is connected to your specific project.
+To see the status of your quota account(s), you can type <code class="docutils literal notranslate"><span class="pre">sacct</span></code>.</p>
+</section>
+<section id="computing-budget">
+<h2>Computing budget<a class="headerlink" href="#computing-budget" title="Permalink to this headline">¶</a></h2>
+<p>Compute time is accounted in CPU/hours and it is organized on semester pricing bill.
+Please note that resources are assigned over a defined time-windows. Quotas are reset on deadlines base, therefore please make sure to use thoroughly your compute budget within the corresponding time frame. Resources unused in the alloted period are not transferred to the next allocation period but are forever lost.</p>
+</section>
+<section id="policies">
+<h2>Policies<a class="headerlink" href="#policies" title="Permalink to this headline">¶</a></h2>
+<p>The <cite>IFY computational resources</cite> code of conduct aims to outline the responsibilities and the proper practices for the IFY-NV user community. The User Regulations define the basic guidelines for the usage of the computing resources. The right to access those resources may be revoked to whoever breaches any of the user regulations.</p>
+</section>
+<section id="data-retention-policies">
+<h2>Data Retention Policies<a class="headerlink" href="#data-retention-policies" title="Permalink to this headline">¶</a></h2>
+<p>Please note that the long term storage service is granted as far as your project is active and the data will be removed without further notice 3 months after the expiration of the project: please check the applicable filesystem policies for the grace period granted after the expiration of the project.
+Furthermore, as soon as your project expires, the backup of the data belonging to the project will be disabled immediately: therefore no data backup will be available anymore after the final data removal.</p>
+</section>
+<section id="fair-usage-of-shared-resources">
+<h2>Fair Usage of Shared Resources<a class="headerlink" href="#fair-usage-of-shared-resources" title="Permalink to this headline">¶</a></h2>
+<p>The Slurm scheduling system is a shared resource that can handle a limited amount of batch jobs and interactive commands simultaneously. Therefore users are not supposed to submit arbitrary amounts of Slurm jobs and commands at the same time, as doing so would infringe our fair usage policy.
+Let us also remind you that running applications on the login nodes is not allowed, as they are a shared resource too. Please submit your simulations with the Slurm scheduler, in order to allocate and run your jobs on a compute node: heavy processes running on the login nodes will be terminated.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="idun.html" class="btn btn-neutral float-right" title="Idun shareholder" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

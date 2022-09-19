@@ -1,0 +1,589 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SLURM Workload Manager &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Managing jobs" href="job_management.html" />
+    <link rel="prev" title="Job script examples" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Job script examples</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SLURM Workload Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#starting-an-interactive-job">Starting an interactive job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#slurm-parameter">SLURM Parameter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-settings">Basic settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requesting-resources">Requesting Resources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#accounting">Accounting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-job-control">Advanced Job Control</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#differences-between-cpus-and-tasks">Differences between CPUs and tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings-for-openmp-and-mpi-jobs">Settings for OpenMP and MPI jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#single-node-jobs">Single node jobs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simple-applications-and-scripts">Simple applications and scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openmp-applications">OpenMP applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#multiple-node-jobs-mpi">Multiple node jobs (MPI)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#to-use-whole-nodes">To use whole nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#to-distribute-your-job">To distribute your job</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#scalability">Scalability</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#job-related-environment-variables">Job related environment variables</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>SLURM Workload Manager</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/jobs/slurm_parameter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="slurm-workload-manager">
+<span id="slurm"></span><h1>SLURM Workload Manager<a class="headerlink" href="#slurm-workload-manager" title="Permalink to this headline">¶</a></h1>
+<p>Slurm is a queing system and a job scheduler installed in the Local HPC at IFY and in IDUN. Lmod is a module system that manages the dependencies of modules and softwares.</p>
+<p>There are two ways of starting jobs with SLURM; either interactively with <code class="docutils literal notranslate"><span class="pre">srun</span></code>
+or as a script with <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.</p>
+<p>Interactive jobs are a good way to test your setup before you put it into a script
+or to work with other applications like python.
+You immediately see the results and can check if all parts behave as you expected.</p>
+<section id="starting-an-interactive-job">
+<h2>Starting an interactive job<a class="headerlink" href="#starting-an-interactive-job" title="Permalink to this headline">¶</a></h2>
+<p>An interactive job can be started wuth the following line:</p>
+<blockquote>
+<div><p>$ srun –nodes=1 –ntasks-per-node=1 –time=00:10:00 –pty bash -i</p>
+</div></blockquote>
+<p>This line asks for a single core on one interactive node for ten minutes with the
+default amount of memory. The command prompt will appear as soon as
+the job starts.</p>
+<p>Once the interactive job starts, it will appear a meassage similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">srun</span><span class="p">:</span> <span class="n">job</span> <span class="mi">10345</span> <span class="n">queued</span> <span class="ow">and</span> <span class="n">waiting</span> <span class="k">for</span> <span class="n">resources</span>
+<span class="n">srun</span><span class="p">:</span> <span class="n">job</span> <span class="mi">10345</span> <span class="n">has</span> <span class="n">been</span> <span class="n">allocated</span> <span class="n">resources</span>
+</pre></div>
+</div>
+<p>To end the job digit exit in the bash shell. If the job exceeds the time or memory
+limits, it will abort.</p>
+<p>Interactive jobs have the same policies as normal batch jobs, there
+are no extra restrictions. Consider that you might be
+sharing the node with other users.</p>
+</section>
+<section id="slurm-parameter">
+<span id="id1"></span><h2>SLURM Parameter<a class="headerlink" href="#slurm-parameter" title="Permalink to this headline">¶</a></h2>
+<p>SLURM supports a multitude of different parameters that can enable tailoring your resources requests to your computational needs, however, if not used appropriately, those parameters can cause a waisting of computational resources and time.</p>
+<p>The following parameters can be used as command line parameters with <code class="docutils literal notranslate"><span class="pre">sbatch</span></code> and
+<code class="docutils literal notranslate"><span class="pre">srun</span></code> or in jobscript. To use a parameter in a jobscript, start a newline with <code class="docutils literal notranslate"><span class="pre">#SBATCH</span></code> followed by the parameter, refer to <a class="reference internal" href="examples.html#job-script-examples"><span class="std std-ref">Job script examples</span></a> for more examples.
+In the following, you can replace &lt;….&gt; with the value you want, e.g. <code class="docutils literal notranslate"><span class="pre">--job-name=test-job</span></code>, either in the jobscript approach or in the interactive approach.</p>
+<section id="basic-settings">
+<h3>Basic settings<a class="headerlink" href="#basic-settings" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–job-name=&lt;name&gt;</p></td>
+<td><p>Job name to be displayed by for example <code class="docutils literal notranslate"><span class="pre">squeue</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>–output=&lt;path&gt;</p></td>
+<td><p>Path to the file where the job (error) output is written to</p></td>
+</tr>
+<tr class="row-even"><td><p>–mail-type=&lt;type&gt;</p></td>
+<td><p>Turn on mail notification; type can be one of BEGIN, END, FAIL, REQUEUE or ALL</p></td>
+</tr>
+<tr class="row-odd"><td><p>–mail-user=&lt;email_address&gt;</p></td>
+<td><p>Email address to send notifications to</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="requesting-resources">
+<h3>Requesting Resources<a class="headerlink" href="#requesting-resources" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–time=&lt;d-hh:mm:ss&gt;</p></td>
+<td><p>Time limit for job. Job will be killed by SLURM after time has run out. Format days-hours:minutes:seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>–nodes=&lt;num_nodes&gt;</p></td>
+<td><p>Number of nodes. Multiple nodes are only useful for jobs with distributed-memory (e.g. MPI).</p></td>
+</tr>
+<tr class="row-even"><td><p>–mem=&lt;MB&gt;</p></td>
+<td><p>Memory (RAM) per node. Number followed by unit prefix, e.g. 16G</p></td>
+</tr>
+<tr class="row-odd"><td><p>–mem-per-cpu=&lt;MB&gt;</p></td>
+<td><p>Memory (RAM) per requested CPU core</p></td>
+</tr>
+<tr class="row-even"><td><p>–ntasks-per-node=&lt;num_procs&gt;</p></td>
+<td><p>Number of (MPI) processes per node. More than one useful only for MPI jobs. Maximum number depends nodes (number of cores)</p></td>
+</tr>
+<tr class="row-odd"><td><p>–cpus-per-task=&lt;num_threads&gt;</p></td>
+<td><p>CPU cores per task. For MPI use one. For parallelized applications benchmark this is the number of threads.</p></td>
+</tr>
+<tr class="row-even"><td><p>–exclusive</p></td>
+<td><p>Job will not share nodes with other running jobs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="accounting">
+<h3>Accounting<a class="headerlink" href="#accounting" title="Permalink to this headline">¶</a></h3>
+<p>For the partitions in HPC_IFY refer to <a class="reference internal" href="../clusters/hpc.html"><span class="doc">Local HPC</span></a>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>–account=&lt;name&gt;</p></td>
+<td><p>Project (not user) account the job. HPC_FY is not an account-based for now. You should use this in the IDUN cluster.</p></td>
+</tr>
+<tr class="row-even"><td><p>–partition=&lt;name&gt;</p></td>
+<td><p>Partition/queue in which o run the job. Select that in base of the needs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="advanced-job-control">
+<h3>Advanced Job Control<a class="headerlink" href="#advanced-job-control" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–array=&lt;indexes&gt;</p></td>
+<td><p>Submit a collection of similar jobs, e.g. <code class="docutils literal notranslate"><span class="pre">--array=1-10</span></code>. (sbatch command only). See official <a class="reference external" href="https://slurm.schedmd.com/job_array.html">SLURM documentation</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>–dependency=&lt;state:jobid&gt;</p></td>
+<td><p>Wait with the start of the job until specified dependencies have been satified. E.g. –dependency=afterok:123456</p></td>
+</tr>
+<tr class="row-even"><td><p>–ntasks-per-core=2</p></td>
+<td><p>Enables hyperthreading per core. Only useful in special circumstances.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="differences-between-cpus-and-tasks">
+<h2>Differences between CPUs and tasks<a class="headerlink" href="#differences-between-cpus-and-tasks" title="Permalink to this headline">¶</a></h2>
+<p>As a new user writing your first SLURM job script, the difference between
+<code class="docutils literal notranslate"><span class="pre">--ntasks</span></code> and <code class="docutils literal notranslate"><span class="pre">--cpus-per-taks</span></code> is typically quite confusing.
+You may wonder, for example, which SLURM parameters to use to run your program on a single node with 10 cores.</p>
+<p>The answer is it depends whether the your application supports MPI.
+MPI (message passing protocol) is a communication interface used for developing
+parallel computing programs on distributed memory systems.
+This is necessary for applications running on multiple computers (nodes) to be able to
+share (intermediate) results between the nodes.</p>
+<p>To decide which set of parameters you should use, check if your application utilizes
+MPI and therefore would benefit from running on multiple nodes simultaneously.
+On the other hand you have an non-MPI enables application or made a mistake in
+your setup, it doesn’t make sense to request more than one node.</p>
+</section>
+<section id="settings-for-openmp-and-mpi-jobs">
+<span id="slurm-recommendations"></span><h2>Settings for OpenMP and MPI jobs<a class="headerlink" href="#settings-for-openmp-and-mpi-jobs" title="Permalink to this headline">¶</a></h2>
+<section id="single-node-jobs">
+<h3>Single node jobs<a class="headerlink" href="#single-node-jobs" title="Permalink to this headline">¶</a></h3>
+<p>This request is useful for applications that are not optimized for HPC (high performance computing) systems,
+like simple python or R scripts and a lot of other softwares that are optimized for desktop PCs.</p>
+<section id="simple-applications-and-scripts">
+<h4>Simple applications and scripts<a class="headerlink" href="#simple-applications-and-scripts" title="Permalink to this headline">¶</a></h4>
+<p>Many simple tools and scripts are not parallized at all and therefore won’t profit from
+more than one CPU core.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–nodes=1</p></td>
+<td><p>Start a unparallized job on only one node</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ntasks-per-node=1</p></td>
+<td><p>For OpenMP, only one task is necessary</p></td>
+</tr>
+<tr class="row-even"><td><p>–cpus-per-task=1</p></td>
+<td><p>Just one CPU core will be used.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–mem=&lt;MB&gt;</p></td>
+<td><p>Memory (RAM) for the job. Number followed by unit prefix, e.g. 10G</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you are unsure if your application can benefit from more cores try a higher number of –cpus-per-task and
+observe the CPU load of your job. If it stays at approximately one there is no need to ask for more than one.</p>
+</section>
+<section id="openmp-applications">
+<h4>OpenMP applications<a class="headerlink" href="#openmp-applications" title="Permalink to this headline">¶</a></h4>
+<p>OpenMP (Open Multi-Processing) is a multiprocessing library is often used for programs on
+shared memory systems. Shared memory describes systems which share the memory between all
+processing units (CPU cores), so that each process can access all data on that system.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–nodes=1</p></td>
+<td><p>Start a parallel job for a shared memory system on only one node</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ntasks-per-node=1</p></td>
+<td><p>For OpenMP, only one task is necessary</p></td>
+</tr>
+<tr class="row-even"><td><p>–cpus-per-task=&lt;num_threads&gt;</p></td>
+<td><p>Number of threads (CPU cores) to use</p></td>
+</tr>
+<tr class="row-odd"><td><p>–mem=&lt;MB&gt;</p></td>
+<td><p>Memory (RAM) for the job. Number followed by unit prefix, e.g. 16G</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="multiple-node-jobs-mpi">
+<h3>Multiple node jobs (MPI)<a class="headerlink" href="#multiple-node-jobs-mpi" title="Permalink to this headline">¶</a></h3>
+<p>In certain cases, one single node and/or few CPU cores are not enough.</p>
+<p>You can either just start a number of MPI tasks or request whole nodes.
+While using whole nodes guarantees that a low latency and high bandwidth it usually results in a longer queuing time compared to cluster wide job.
+With the latter the SLURM manager can distribute your task across all nodes and utilize otherwise unused cores on nodes which for example run a 16 core job on a 20 core node. This usually results in shorter queuing times but slower inter-process connection speeds.</p>
+<p>We strongly advice all users to ask for a given set of cores when submitting
+multi-core jobs.  To make sure that you utilize full nodes, you should ask for
+sets that adds up to both 16 and 20 (80, 120 etc) due to the hardware specifics</p>
+<p>This will make the best use of the resources and give the most predictable
+execution times. If your job requires more than the default available memory per
+core (125 GB/node gives 7,8 GB/core for 16 core nodes and 6,25 GB/core for 20 core
+nodes) you should adjust this need with the following command: <code class="docutils literal notranslate"><span class="pre">#SBATCH</span>
+<span class="pre">--mem-per-cpu=25</span> <span class="pre">GB</span></code> When doing this, the batch system will automatically allocate
+4 cores of 20 core nodes.</p>
+<section id="to-use-whole-nodes">
+<h4>To use whole nodes<a class="headerlink" href="#to-use-whole-nodes" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–nodes=&lt;num_nodes&gt;</p></td>
+<td><p>Start a parallel job for a distributed memory system on several nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ntasks-per-node=&lt;num_procs&gt;</p></td>
+<td><p>Number of (MPI) processes per node. Maximum number depends nodes (16 on HPC_IFY)</p></td>
+</tr>
+<tr class="row-even"><td><p>–cpus-per-task=1</p></td>
+<td><p>Use one CPU core per task.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–exclusive</p></td>
+<td><p>Job will not share nodes with other running jobs. You don’t need to specify memory as you will get all available on the node.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="to-distribute-your-job">
+<h4>To distribute your job<a class="headerlink" href="#to-distribute-your-job" title="Permalink to this headline">¶</a></h4>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–ntasks=&lt;num_procs&gt;</p></td>
+<td><p>Number of (MPI) processes in total. Equals to the number of cores</p></td>
+</tr>
+<tr class="row-odd"><td><p>–mem-per-cpu=&lt;MB&gt;</p></td>
+<td><p>Memory (RAM) per requested CPU core. Number followed by unit prefix, e.g. 2G</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="scalability">
+<h3>Scalability<a class="headerlink" href="#scalability" title="Permalink to this headline">¶</a></h3>
+<p>You should run a few tests to see what is the best fit between minimizing
+runtime and maximizing your allocated cpu. That is you should not ask for
+more cpus for a job than you really can utilize efficiently. Try to run your
+job on 1, 2, 4, 8, 16, etc., cores to see when the runtime for your job starts
+tailing off. If you start to see less than 30% improvement in runtime when
+doubling the cpu-counts you should probably not increase further the number of cores.
+Recommendations to a few of the most used applications can be found in <a class="reference internal" href="../applications/sw_guides.html#sw-guides"><span class="std std-ref">Application guides</span></a>.</p>
+</section>
+</section>
+<section id="job-related-environment-variables">
+<h2>Job related environment variables<a class="headerlink" href="#job-related-environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>Here we list some environment variables that are defined when you run a job
+script.  These is not a complete list. Please consult the SLURM documentation
+for a complete list.</p>
+<p>Job number:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SLURM_JOBID</span>
+<span class="n">SLURM_ARRAY_TASK_ID</span>  <span class="c1"># relevant when you are using job arrays</span>
+</pre></div>
+</div>
+<p>List of nodes used in a job:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SLURM_NODELIST</span>
+</pre></div>
+</div>
+<p>Submit directory (this is the directory where you have sbatched your job):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SUBMITDIR</span>
+<span class="n">SLURM_SUBMIT_DIR</span>
+</pre></div>
+</div>
+<p>Default number of threads:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OMP_NUM_THREADS</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Task count:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SLURM_NTASKS</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="job_management.html" class="btn btn-neutral float-right" title="Managing jobs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="examples.html" class="btn btn-neutral float-left" title="Job script examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

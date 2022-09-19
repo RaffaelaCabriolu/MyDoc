@@ -1,0 +1,283 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Schrodinger jobs on Stallo &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Running Schrodinger jobs on Stallo</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/applications/chemistry/Schrodinger/run_schrod.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="running-schrodinger-jobs-on-stallo">
+<span id="run-schrodinger"></span><h1>Running Schrodinger jobs on Stallo<a class="headerlink" href="#running-schrodinger-jobs-on-stallo" title="Permalink to this headline">¶</a></h1>
+<p>This page contains info about how to submit Schrodinger jobs on Stallo, based
+on two sets of examples - one for docking and one for molecular dynamics -
+provided to us by users.</p>
+<p>Pay enhanced attention to the <cite>ssh -Y c1-2</cite> in examples below; this represents the adviced behaviour on how to run jobs on Stallo for your benefit solely!</p>
+<p>A more thorough explanation to this, is that maestro starts a distribution and surveilance process that creates the jobs that enters the shared resources allocation (aka batch) system. If this process dies, the underlying jobs dies disregarding their computational status. This could have been solved by just running this on the login node, but imagine how it would have been with 1000 simultanious users sharing two login nodes and 50 of those ran 20-40 simultaneous perl and python processes each on the login nodes. So, please do as told.</p>
+<section id="submitting-jobs-through-the-maestro-interface">
+<h2>Submitting jobs through the maestro interface<a class="headerlink" href="#submitting-jobs-through-the-maestro-interface" title="Permalink to this headline">¶</a></h2>
+<p>Log in to Stallo with either x11-tunnelling enabled or through stallo-gui.uit.no.</p>
+<p>To get download the jobscript example(s), type the following:Direct log in via ssh:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load Schrodinger/2017-2-intel-2016a
+$ cp -r /global/hds/software/notur/apprunex/Schrodinger/* ~
+<span class="c1"># Be sure this do not overwrite any folder or info you may want to keep in your home.</span>
+</pre></div>
+</div>
+<p>Note: This suite is quite extensive in features, and we generally advice you to either join tutorial courses, talk to experts in your proximity or read the vendor-provided documentation if you have absolutely no knowledge about how to use this suite of software. Here we only provide a couple of rough startup examples to get you up running.</p>
+<p>Then;</p>
+<p><strong>If you want to test the molecular dynamics package</strong></p>
+<p>Do the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh -Y c1-2
+$ module load Schrodinger/2017-2-intel-2016a
+$ <span class="nb">cd</span> example_md
+$ maestro -SGL
+</pre></div>
+</div>
+<p>and start a Molecular Dynamics task from the Tasks menu bar. Load model system from file, choose desmond_md_example.cms</p>
+<p>Set all settings to your satisfaction.</p>
+<p>Open the job settings; you should only be presented the following options</p>
+<ol class="arabic simple">
+<li><p>localhost (only for job-setups)</p></li>
+<li><p>batch-normal (2 days (=48hrs) of walltime/1000 cpus)</p></li>
+<li><p>batch-long (21 days (504 hrs) of walltime/1000cpus)</p></li>
+</ol>
+<p>Make sure that only one option is highlighted (only one of the batch-XXX´s). Press the run button and supervise running.</p>
+<p>(This test case is provided us by Vladimir Pomogaev.)</p>
+<p><strong>If you want to test the docking package</strong></p>
+<p>Do the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ssh -Y c1-2
+$ module load Schrodinger/2017-2-intel-2016a
+$ <span class="nb">cd</span> example_docking
+$ maestro -SGL
+</pre></div>
+</div>
+<p>and start a Docking task from the Tasks menu bar.</p>
+<p>Choose abl1-kinase-t316i_glide-grid.zip as grid</p>
+<p>Use ligands from file; if you want to run a very short test - choose abl1-kinase-t316i_minimized.mae, for a longer test browse for SD and choose Asinex-50000-3D-minimized.sdf set of ligands. Set all settings to your satisfaction. For job settings, see example above.</p>
+<p>(This test case is provided us by Bjorn Dalhus.)</p>
+</section>
+<section id="if-you-want-to-run-vsw-routines-from-the-command-line">
+<h2>If you want to run vsw routines from the command line<a class="headerlink" href="#if-you-want-to-run-vsw-routines-from-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>The Schrodinger suite is shipped with scripts that connects the software installation with the system batch resource allocation setup, making it possible to submit glide jobs from the linux command line.</p>
+<p>Examples of valid command line submissions using the vsw-tool on Stallo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vsw *.inp -DRIVERHOST batch-normal -host_glide batch-normal:100 -NJOBS <span class="m">1</span> –adjust
+</pre></div>
+</div>
+<p>If you are worried that you will not refind your files for emergency startup:</p>
+<p><strong>Note the following details:</strong></p>
+<ol class="arabic simple">
+<li><p>When the Schrodinger module is loaded on Stallo, the Schrodinger software folder is set in path, making $SCHRODINGER unecessary.</p></li>
+<li><p>The Schrodinger setup on Stallo writes to the scratch file system by default, potentially making both the -LOCAL and the -SAVE flags uneccesary.</p></li>
+<li><p>We do not recommend the -REMOTEDRIVER flag due to the risk of loosing jobs related to the admin process running out allocated time.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

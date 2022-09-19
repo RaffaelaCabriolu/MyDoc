@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gaussian job example &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Gaussian job example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/applications/chemistry/Gaussian/job-example.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="gaussian-job-example">
+<h1>Gaussian job example<a class="headerlink" href="#gaussian-job-example" title="Permalink to this headline">¶</a></h1>
+<p>To run this example create a directory, step into it, create the input file and submit the script with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sbatch gaussian-runscript.sh
+</pre></div>
+</div>
+<section id="input-example">
+<h2>Input example<a class="headerlink" href="#input-example" title="Permalink to this headline">¶</a></h2>
+<p>Direct download link: <a class="reference download internal" download="" href="../../../_downloads/a95c89c331622b034c8a2389b9fe3952/example.com"><code class="xref download docutils literal notranslate"><span class="pre">input</span> <span class="pre">example</span></code></a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>%chk=example
+%mem=500MB
+#p b3lyp/cc-pVDZ opt
+
+benzene molecule example
+
+0 1
+C        0.00000        1.40272        0.00000
+C        0.00000       -1.40272        0.00000
+C        1.21479        0.70136        0.00000
+C        1.21479       -0.70136        0.00000
+C       -1.21479        0.70136        0.00000
+C       -1.21479       -0.70136        0.00000
+H        0.00000        2.49029        0.00000
+H        0.00000       -2.49029        0.00000
+H        2.15666        1.24515        0.00000
+H        2.15666       -1.24515        0.00000
+H       -2.15666        1.24515        0.00000
+H       -2.15666       -1.24515        0.00000
+
+
+</pre></div>
+</div>
+</section>
+<section id="runscript-example">
+<h2>Runscript example<a class="headerlink" href="#runscript-example" title="Permalink to this headline">¶</a></h2>
+<p>Direct download link: <a class="reference download internal" download="" href="../../../_downloads/e4e3f471373f76704c32b5f201e51908/gaussian-runscript.sh"><code class="xref download docutils literal notranslate"><span class="pre">runscript</span> <span class="pre">example</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+
+<span class="c1">#SBATCH --account=nn....k</span>
+
+<span class="c1">#SBATCH --job-name=example</span>
+<span class="c1">#SBATCH --output=example.log</span>
+
+<span class="c1"># Stallo nodes have either 16 or 20 cores: 80 is a multiple of both</span>
+<span class="c1">#SBATCH --ntasks=80</span>
+
+<span class="c1"># make sure no other job runs on the same node</span>
+<span class="c1">#SBATCH --exclusive</span>
+
+<span class="c1"># syntax is    DD-HH:MM:SS</span>
+<span class="c1">#SBATCH --time=00-00:30:00</span>
+
+<span class="c1"># allocating 30 GB on a node and leaving a bit over 2 GB for the system</span>
+<span class="c1">#SBATCH --mem-per-cpu=1500MB</span>
+
+<span class="c1">################################################################################</span>
+<span class="c1"># no bash commands above this line</span>
+<span class="c1"># all sbatch directives need to be placed before the first bash command</span>
+
+<span class="c1"># name of the input file without the .com extention</span>
+<span class="nv">input</span><span class="o">=</span>example
+
+<span class="c1"># flush the environment for unwanted settings</span>
+module --quiet purge
+<span class="c1"># load default program system settings</span>
+module load Gaussian/g16_B.01
+
+<span class="c1"># set the heap size for the job to 20 GB</span>
+<span class="nb">export</span> <span class="nv">GAUSS_LFLAGS2</span><span class="o">=</span><span class="s2">&quot;--LindaOptions -s 20000000&quot;</span>
+
+<span class="c1"># split large temporary files into smaller parts</span>
+lfs setstripe –c <span class="m">8</span> .
+
+<span class="c1"># create scratch space for the job</span>
+<span class="nb">export</span> <span class="nv">GAUSS_SCRDIR</span><span class="o">=</span>/global/work/<span class="si">${</span><span class="nv">USER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SLURM_JOB_ID</span><span class="si">}</span>
+<span class="nv">tempdir</span><span class="o">=</span><span class="si">${</span><span class="nv">GAUSS_SCRDIR</span><span class="si">}</span>
+mkdir -p <span class="si">${</span><span class="nv">tempdir</span><span class="si">}</span>
+
+<span class="c1"># copy input and checkpoint file to scratch directory</span>
+cp <span class="si">${</span><span class="nv">SLURM_SUBMIT_DIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">input</span><span class="si">}</span>.com <span class="si">${</span><span class="nv">tempdir</span><span class="si">}</span>
+<span class="k">if</span> <span class="o">[</span> -f <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_SUBMIT_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">input</span><span class="si">}</span><span class="s2">.chk&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    cp <span class="si">${</span><span class="nv">SLURM_SUBMIT_DIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">input</span><span class="si">}</span>.chk <span class="si">${</span><span class="nv">tempdir</span><span class="si">}</span>
+<span class="k">fi</span>
+
+<span class="c1"># run the code</span>
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">tempdir</span><span class="si">}</span>
+<span class="nb">time</span> g16.ib <span class="si">${</span><span class="nv">input</span><span class="si">}</span>.com &gt; <span class="si">${</span><span class="nv">input</span><span class="si">}</span>.out
+
+<span class="c1"># copy output and checkpoint file back</span>
+cp <span class="si">${</span><span class="nv">input</span><span class="si">}</span>.out <span class="si">${</span><span class="nv">SLURM_SUBMIT_DIR</span><span class="si">}</span>
+cp <span class="si">${</span><span class="nv">input</span><span class="si">}</span>.chk <span class="si">${</span><span class="nv">SLURM_SUBMIT_DIR</span><span class="si">}</span>
+
+<span class="c1"># remove the scratch directory after the job is done</span>
+<span class="c1"># cd ${SLURM_SUBMIT_DIR}</span>
+<span class="c1"># rm -rf /global/work/${USER}/${SLURM_JOB_ID}</span>
+
+<span class="nb">exit</span> <span class="m">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

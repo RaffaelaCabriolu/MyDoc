@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TURBOMOL runscript example &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>TURBOMOL runscript example</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/applications/chemistry/TURBOMOLE/run_turbo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="turbomol-runscript-example">
+<span id="turbomole-example"></span><h1>TURBOMOL runscript example<a class="headerlink" href="#turbomol-runscript-example" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash -l
+#SBATCH --job-name=turbomole
+#SBATCH --account=nnXXXXk
+#SBATCH --time=1:00:00
+#SBATCH --mem-per-cpu=1000MB
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=20
+#SBATCH --mail-type=ALL
+#SBATCH --partition=multinode
+
+# For TURBOMOLE v7.2:
+# --nodes           : scale by the size of the calculation
+# --ntasks-per-node : always a singel task per node
+# --cpus-per-task   : always full nodes
+
+# load modules
+module --quiet purge
+module load TURBOMOLE/7.2
+
+# TURBOMOLE needs this variable
+export TURBOTMPDIR=/global/work/${USER}/${SLURM_JOBID}
+workdir=${TURBOTMPDIR}
+submitdir=${SLURM_SUBMIT_DIR}
+
+# copy files to work
+mkdir -p $workdir
+cd $workdir
+cp $submitdir/* $workdir
+
+# set parallel environment
+export PARNODES=${SLURM_NTASKS}
+export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+
+# run jobex calculation
+dscf &gt; dscf.out
+
+# copy files back
+mv * $submitdir
+
+# clean up
+rm -r $workdir
+
+exit 0
+</pre></div>
+</div>
+<section id="turbomol-example-on-stallo">
+<h2>TURBOMOL example on Stallo<a class="headerlink" href="#turbomol-example-on-stallo" title="Permalink to this headline">¶</a></h2>
+<p>The above runscript can be found on Stallo along with the necessary input files
+to perform a simple DFT calculation. To get access to the examples directory,
+load the <code class="docutils literal notranslate"><span class="pre">notur</span></code> module</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load notur
+$ cp -r /global/hds/software/notur/apprunex/TURBOMOLE .
+</pre></div>
+</div>
+<p>From this directory you can submit the example script (you need to specify a
+valid account in the script first)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sbatch job_turbo.sh
+</pre></div>
+</div>
+<p>The calculation should take less than 2 min, but may spend much more than this
+in the queue. Verify that the output file <code class="docutils literal notranslate"><span class="pre">dscf.out</span></code> ends with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>**** dscf : all <span class="k">done</span> ****
+</pre></div>
+</div>
+<p>Please refer to the TURBOMOLE manual for how to setup different types of
+calculations.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

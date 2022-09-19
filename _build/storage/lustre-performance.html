@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Lustre FS performance tips &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Lustre FS performance tips</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/storage/lustre-performance.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="lustre-fs-performance-tips">
+<h1>Lustre FS performance tips<a class="headerlink" href="#lustre-fs-performance-tips" title="Permalink to this headline">¶</a></h1>
+<section id="how-you-can-adjust-lustre-depending-on-your-application-io-requirements">
+<h2>How you can adjust Lustre depending on your application IO requirements.<a class="headerlink" href="#how-you-can-adjust-lustre-depending-on-your-application-io-requirements" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Lustre is a scalable, high performance, parallel I/O file system. More information about Lustre can be found on <a class="reference external" href="https://en.wikipedia.org/wiki/Lustre_(file_system)">Wikipedia</a> .</p>
+<p>When using additional library for I/O (i.e. MPIIO, HDF5), reading and writing can be done in parallel from several nodes into single-shared file.</p>
+<p>At the time of writing this guide Lustre is available on 2 NOTUR machines:</p>
+<ul class="simple">
+<li><p>Hexagon ( /work )</p></li>
+<li><p>Stallo (/global/work )</p></li>
+</ul>
+<p>All tests were performed on fully loaded machines, mean values of three repeats were used.</p>
+<p>Lustre terminology and setup:</p>
+<p>MDS is the MetaData Server which handles the information about files and directories.
+OSS is a object storage server that store file data on one or more object storage targets (OSTs).
+OST is the Object Storage Target, which is responsible for writing or reading the actual data to and from disk.</p>
+</section>
+<section id="striping">
+<h2>Striping<a class="headerlink" href="#striping" title="Permalink to this headline">¶</a></h2>
+<p>Lustre file striping defines the number of OSTs a file is written across. At the time of writing hexagon has 2 stripes with 1MB size. Stallo has by default 1 stripe (no striping).
+You can manage striping with the following tools/commands:</p>
+<blockquote>
+<div><p>lfs setstripe - a command to change striping parameters.
+lfs getstripe - a command to get striping information.
+llapi - a set of C commands to manipulate striping parameters from C programs (llapi_file_create, llapi_file_get_stripe).</p>
+</div></blockquote>
+<p>Note that the changed striping can only take effect for newly created files or files that are copied (not moved) into the directory.</p>
+<p>Examples:</p>
+<p>lfs setstripe –size 2M “dir” # will set stripe size for “dir” to 2M.</p>
+<p>lfs setstripe –count 12 “dir” # will set that each file inside “dir” will be striped across 12 OSTs.</p>
+</section>
+<section id="serial-io">
+<h2>Serial IO<a class="headerlink" href="#serial-io" title="Permalink to this headline">¶</a></h2>
+<p>This is when a file or set of files are accessed by one process. Below are charts representing Hexagon and Stallo serial IO performance with different number of OSTs and different chunk sizes.
+It is true for both machines that to get better IO performance you have to stripe file across several OSTs, where for:</p>
+<img alt="../_images/hexagon-serialIO-write.png" src="../_images/hexagon-serialIO-write.png" />
+<img alt="../_images/stallo-serialIO.png" src="../_images/stallo-serialIO.png" />
+<p>Hexagon optimal is using 2-4 OSTs, depending on the stripe size. Increasing chunk size is not much affecting hexagon. This can be related to the interconnect, where 1MB transfer size is a minimal size to get optimal performance.</p>
+<p>Stallo, by using 8 OSTs you will speedup your data IO from default 25MIB/s to almost 200MIB/s! Maximum performance you will get with bigger chunk size and enough number of OSTs (32MB chunk and 32OSTs will give you 428MIB/s).</p>
+</section>
+<section id="parallel-io">
+<h2>Parallel IO<a class="headerlink" href="#parallel-io" title="Permalink to this headline">¶</a></h2>
+<p>Many processes writing into single-shared file. You will need to write at offsets or use parallel IO library, like MPIIO, HDF5.
+On both machines the same number of stripes as the number of clients have been used (up to the maximum number of OSTs).</p>
+<img alt="../_images/hexagon-parallelIO-write.png" src="../_images/hexagon-parallelIO-write.png" />
+<img alt="../_images/stallo-parallelIO-write.png" src="../_images/stallo-parallelIO-write.png" />
+<p>The general rule, like “many clients – do stripe” works on both machines.
+Specific:
+-  Hexagon. One to one ratio of clients to OSTs works fine (up to the maximum number of OSTs). Increasing chunk size is not affecting performance.
+-  Stallo, to get most out of the file system you will have to increase the chunk size to 32MB and when you have up to 96 clients stripe over as many OSTs as you have clients, when you are over 96 clients, keep number of OSTs to 96 to avoid contention.</p>
+</section>
+<section id="general-tips">
+<h2>General Tips<a class="headerlink" href="#general-tips" title="Permalink to this headline">¶</a></h2>
+<p>General striping recommendation:</p>
+<ul class="simple">
+<li><p>Many clients and many files: Do NOT stripe.</p></li>
+<li><p>Many clients one file: Do stripe.</p></li>
+<li><p>Some clients and few large files: Do stripe.</p></li>
+</ul>
+<p>In addition:</p>
+<ul class="simple">
+<li><p>Use parallel IO (HDF5, MPIIO), this is the only way to get full advantage of the Lustre filesystem.</p></li>
+<li><p>Open files read-only whenever is possible.</p></li>
+<li><p>Keep small files on the same OST.</p></li>
+</ul>
+<p>It is highly recommended to read I/O Lustre tips from NICS (<a class="reference external" href="http://www.nics.tennessee.edu/computing-resources/file-systems/io-lustre-tips">http://www.nics.tennessee.edu/computing-resources/file-systems/io-lustre-tips</a>).</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

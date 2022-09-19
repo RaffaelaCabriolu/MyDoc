@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Memory and number of cores &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Memory and number of cores</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/applications/chemistry/Gaussian/gaussian_on_stallo.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="memory-and-number-of-cores">
+<span id="gaussian-on-stallo"></span><h1>Memory and number of cores<a class="headerlink" href="#memory-and-number-of-cores" title="Permalink to this headline">¶</a></h1>
+<p>This page contains info about special features related to
+the Gaussian install made on Stallo, but also general issues
+related to Gaussian only vaguely documented elsewhere.</p>
+<section id="choosing-the-right-version">
+<h2>Choosing the right version<a class="headerlink" href="#choosing-the-right-version" title="Permalink to this headline">¶</a></h2>
+<p>To see which versions of Gaussien are available, use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module avail Gaussian/
+</pre></div>
+</div>
+<p>To load a specific version of Gaussian, use for instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load Gaussian/g16_B.01
+</pre></div>
+</div>
+</section>
+<section id="gaussian-over-infiniband">
+<h2>Gaussian over Infiniband<a class="headerlink" href="#gaussian-over-infiniband" title="Permalink to this headline">¶</a></h2>
+<p>First note that the Gaussian installation on Stallo is the Linda parallel
+version, so it scales somewhat initially. On top of this, Gaussian is installed
+with a little trick, where the loading of the executable is intercepted before
+launched, and an alternative socket library is loaded. This enables the
+running Gaussian natively on the Infiniband network giving us
+two advantages:</p>
+<ul class="simple">
+<li><p>The parallel fraction of the code scales to more cores.</p></li>
+<li><p>The shared memory performance is significantly enhanced (small scale performance).</p></li>
+</ul>
+<p>But since we do this trick, we are greatly depending on altering the specific
+node address into the input file: To run gaussian in parallel requires the
+additional keywords <code class="docutils literal notranslate"><span class="pre">%LindaWorkers</span></code> and <code class="docutils literal notranslate"><span class="pre">%NProcshared</span></code> in the <code class="docutils literal notranslate"><span class="pre">Link</span> <span class="pre">0</span></code> part of the
+input file. This is taken care of by a wrapper script around the
+original binary in each individual version folder. This
+is also commented in the job script example. Please use
+our example when when submitting jobs.</p>
+<p>We have also taken care of the rsh/ssh setup in our installation procedure, to
+avoid .tsnet.config dependency for users.</p>
+</section>
+<section id="parallel-scaling">
+<h2>Parallel scaling<a class="headerlink" href="#parallel-scaling" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian is a rather large program system with a range of different binaries,
+and users need to verify whether the functionality they use is parallelized and
+how it scales.</p>
+<p>Due to the preload Infiniband trick, we have a somewhat more generous policy
+when it comes to allocating cores/nodes to Gaussian jobs but before computing a
+table of different functionals and molecules, we strongly advice users to first
+study the scaling of the code for a representative system.</p>
+<p>Please do not reuse scripts inherited from others without studying the
+performance and scaling of your job. If you need assistance with this, please
+contact the user support.</p>
+<p>We do advice people to use up to 256 cores (<code class="docutils literal notranslate"><span class="pre">--tasks</span></code>). We have observed
+acceptable scaling of the current Gaussian install beyond 16 nodes for the jobs
+that do scale outside of one node (i.e. the binaries in the $gXXroot/linda-exe
+folder).  Linda networking overhead seems to hit hard around this amount of
+cores, causing us to be somewhat reluctant to advice going beyond 256 cores.</p>
+<p>Since we have two different architectures with two different core counts on
+Stallo, the <code class="docutils literal notranslate"><span class="pre">--exclusive</span></code> flag is important to ensure that the distribution
+of jobs across the whole system are done in a rather flexible and painless way.</p>
+</section>
+<section id="memory-allocation">
+<h2>Memory allocation<a class="headerlink" href="#memory-allocation" title="Permalink to this headline">¶</a></h2>
+<p>Gaussian takes care of memory allocation internally.</p>
+<p>That means that if the submitted job needs more memory per core than what is in
+average available on the node, it will automatically scale down the number of
+cores to mirror the need. This also means that you always should ask for full
+nodes when submitting Gaussian jobs on Stallo! This is taken care of by the
+<code class="docutils literal notranslate"><span class="pre">--exclusive</span></code> flag and commented in the job script example.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">%mem</span></code> allocation of memory in the Gaussian input file means two things:</p>
+<ul class="simple">
+<li><p>In general it means memory/node – for share between <code class="docutils literal notranslate"><span class="pre">nprocshared</span></code>, and
+additional to the memory allocated per process. This is also documented by
+Gaussian.</p></li>
+<li><p>For the main process/node it also represents the network
+buffer allocated by Linda since the main Gaussian process takes a part
+and Linda communication process takes a part equally sized – thus you should
+never ask for more than half of the physical memory on the nodes, unless they
+have swap space available - which you never should assume.
+The general <code class="docutils literal notranslate"><span class="pre">%mem</span></code> limit will always be half of the physical memory
+pool given in MB instead of GB - 16000MB instead of 16GB since this leaves a
+small part for the system. That is why we would actually advise to use 15GB as
+maximum <code class="docutils literal notranslate"><span class="pre">%mem</span></code> size.</p></li>
+</ul>
+</section>
+<section id="large-temporary-outputs-on-stallo">
+<h2>Large temporary outputs on Stallo<a class="headerlink" href="#large-temporary-outputs-on-stallo" title="Permalink to this headline">¶</a></h2>
+<p>As commented here <a class="reference internal" href="../../../storage/storage.html"><span class="doc">Storage and backup</span></a> there is an issue related to very
+large temporary files on Stallo. Please read up on it at act accordingly. This
+issue is also commented in the job script example.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

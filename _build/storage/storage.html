@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Storage and backup &mdash; HPC Physics documentation 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> HPC Physics documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../clusters/getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/news.html">News and notifications</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Getting help</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../help/contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/staff.html">Support staff and Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/faq.html">Frequently asked questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/hpc-qa-sessions.html">Forum, Open Question &amp; Answer Sessions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jobs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/dos_and_donts.html">Dos and don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/batch.html">Batch system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/examples.html">Job script examples</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/slurm_parameter.html">SLURM Workload Manager</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/job_management.html">Managing jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/monitoring.html">Monitoring your jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../jobs/running_mpi_jobs.html">Running MPI jobs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Physics documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Storage and backup</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/storage/storage.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="storage-and-backup">
+<h1>Storage and backup<a class="headerlink" href="#storage-and-backup" title="Permalink to this headline">¶</a></h1>
+<section id="available-file-system">
+<h2>Available file system<a class="headerlink" href="#available-file-system" title="Permalink to this headline">¶</a></h2>
+<p>Stallo has a “three folded” file system:</p>
+<ul class="simple">
+<li><p>Global accessible home area (user area):            /home        (64 TB)</p></li>
+<li><p>Global accessible work or scratch area:             /global/work (1000 TB)</p></li>
+<li><p>Local accessible work or scratch area on each node: /local/work  (~450 GB)</p></li>
+</ul>
+</section>
+<section id="home-area">
+<h2>Home area<a class="headerlink" href="#home-area" title="Permalink to this headline">¶</a></h2>
+<p>The file system for user home directories on Stallo. It is a 64 TB global file
+system, which is accessible from both the login nodes and all the compute
+nodes. The size of the home directory’s for each user is 300 GB. It is not
+possible to extend the size. If you need more space, consider using
+/global/work (see below).</p>
+<p>The home area is for “permanent” storage only, so please do not use it for
+temporary storage during production runs. Jobs using the home area for scratch
+files while running may be killed without any warning.</p>
+</section>
+<section id="work-scratch-areas">
+<h2>Work/scratch areas<a class="headerlink" href="#work-scratch-areas" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to stallo coming close to its storage limits, starting from July 2020
+/global/work will be subject to a auto cleanup affecting all files
+older than 21 days.</p>
+<p>Starting from first of July we will move all files which haven’t been
+accessed for more than 21 days to  a trash folder from where they will
+be deleted in due time.</p>
+<p>We ask you to classify your data in /global/work and move all files you
+need to keep to your home folder or other storage options like NIRD.
+In order to save storage space consider archiving your data in
+compressed form, see <a class="reference internal" href="#file-compression"><span class="std std-ref">Compression of data</span></a>.</p>
+<p>In case you miss important files that have been moved, please write an
+email to <a class="reference external" href="mailto:migration&#37;&#52;&#48;metacenter&#46;no">migration<span>&#64;</span>metacenter<span>&#46;</span>no</a> as we keep the files for some time and
+can restore them if needed.</p>
+</div>
+<p>There are two different work/scratch areas available on Stallo:</p>
+<ul class="simple">
+<li><p>1000 TB global accessible work area on the cluster,
+accessible from both the login nodes and all the compute nodes as
+/global/work. This is the recommended work area, both because of size and
+performance! Users can stripe files themselves as this file system is a Lustre
+file system.</p></li>
+<li><p>In addition, each compute node has a small work area of approximately
+450 GB, only locally accessible on each node. This area is accessible as
+/local/work on each compute node. In general we do not  recommend to use
+/local/work, both because of (the lack of) size and performance, however for
+some users this may be the best alternative.</p></li>
+</ul>
+<p>These work areas should be used for all jobs running on Stallo.</p>
+<p>There is no backup of files stored on the work areas.
+If you need permanent storage of large amounts of data, please
+contact the system administrators: <a class="reference external" href="mailto:support&#37;&#52;&#48;metacenter&#46;no">support<span>&#64;</span>metacenter<span>&#46;</span>no</a></p>
+<p>Disk quota is not enforced on work/scratch areas. Please use common courtesy
+and keep your work/scratch partitions clean. Move all files you do not need on
+Stallo elsewhere or delete them. Since overfilled work/scratch partitions can
+cause problems, files older than 14 days are subject for deletion without any
+notice.</p>
+<p>Files on /local/work/ belonging to users other than the one that runs a job on
+the node will be deleted.</p>
+</section>
+<section id="backup">
+<h2>Backup<a class="headerlink" href="#backup" title="Permalink to this headline">¶</a></h2>
+<p>There is no real backup of the data on Stallo. However we do keep daily
+snapshots of /home and /project for the last 7 days. The /home snapshots are
+kept at /global/hds/.snapshot/</p>
+<p>There is no backup of files stored on the /global/work and /local/work areas.
+If you need permanent storage of large amounts of data, or if you need to
+restore some lost data, please contact the system administrators:
+<a class="reference external" href="mailto:support&#37;&#52;&#48;metacenter&#46;no">support<span>&#64;</span>metacenter<span>&#46;</span>no</a></p>
+</section>
+<section id="archiving-data">
+<h2>Archiving data<a class="headerlink" href="#archiving-data" title="Permalink to this headline">¶</a></h2>
+<p>Archiving is not provided. However you may apply for archive space on
+<a class="reference external" href="https://archive.norstore.no/">Norstore</a>.</p>
+</section>
+<section id="closing-of-user-account">
+<h2>Closing of user account<a class="headerlink" href="#closing-of-user-account" title="Permalink to this headline">¶</a></h2>
+<p>User accounts on Stallo are closed on request from Uninett Sigma or the
+project leader. The account is closed in a way so that the user no
+longer can log in to Stallo.</p>
+<p>If the user has data needed by other people in the group all
+data on /home/ is preserved.</p>
+</section>
+<section id="privacy-of-user-data">
+<h2>Privacy of user data<a class="headerlink" href="#privacy-of-user-data" title="Permalink to this headline">¶</a></h2>
+<p>General privacy</p>
+<p>There is a couple of things you as a user, can do to minimize the risk
+of your data and account on Stallo being read/accessed from the outside
+world.</p>
+<ol class="arabic simple">
+<li><p>Your account on Stallo is personal, do not give away your password to
+anyone, not even the HPC staff.</p></li>
+<li><p>If you have configured ssh-keys on your local computer, do not use
+passphrase-less keys for accessing Stallo.</p></li>
+</ol>
+<p>By default a new account on Stallo is readable for everyone on the
+system. That is both /home/ and /global/work/</p>
+<p>This can easily be change by the user using the command chmod The chmod
+have a lot “cryptic” combinations of options (<a class="reference external" href="https://en.wikipedia.org/wiki/Chmod">click here for a more in
+depth explanation</a> ). the most
+commonly used is:</p>
+<ul>
+<li><p>only user can read their home directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chmod 700 /home/$USER
+</pre></div>
+</div>
+</li>
+<li><p>User and their group can read and execute files on the home directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chmod 750 /home/$USER
+</pre></div>
+</div>
+</li>
+<li><p>User and all others including the group can read and execute the files:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chmod 755 /home/$USER
+</pre></div>
+</div>
+</li>
+<li><p>everybody can read, execute, and WRITE to directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>chmod 777 /home/$USER
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="management-of-lage-files-200gb">
+<h2>Management of lage files (&gt; 200GB)<a class="headerlink" href="#management-of-lage-files-200gb" title="Permalink to this headline">¶</a></h2>
+<p>Some special care needs to be taken if you want to create very large
+files on the system. With large we mean file sizes over 200GB.</p>
+<p>The /global/work file system (and /global/home too) is served by a
+number of storage arrays that each contain smaller pieces of the file
+system, the size of the chunks are 2TB (2000GB) each. In the default
+setup each file is contained within one storage array so the default
+filesize limit is thus 2TB. In practice the file limit is considerably
+smaller as each array contains a lot of files.</p>
+<p>Each user can change the default placement of the files it creates by
+striping files over several storage arrays. This is done with the
+following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lfs</span> <span class="n">setstripe</span> <span class="o">-</span><span class="n">c</span> <span class="mi">4</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>After this has been done all new files created in the current directory
+will be spread over 4 storage arrays each having 1/4th of the file. The
+file can be accessed as normal no special action need to be taken. When
+the striping is set this way it will be defined on a per directory basis
+so different directories can have different stripe setups in the same file
+system, new subdirectories will inherit the striping from its parent at the
+time of creation.</p>
+<p>We recommend users to set the stripe count so that each chunk will be
+approx. 200-300GB each, for example</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 26%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File size</p></th>
+<th class="head"><p>Stripe count</p></th>
+<th class="head"><p>Command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>500-1000GB</p></td>
+<td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lfs</span> <span class="pre">setstripe</span> <span class="pre">-c</span> <span class="pre">4</span> <span class="pre">.</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1TB - 2TB</p></td>
+<td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lfs</span> <span class="pre">setstripe</span> <span class="pre">-c</span> <span class="pre">8</span> <span class="pre">.</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Once a file is created the stripe count cannot be changed. This is
+because the physical bits of the data already are written to a certain
+subset of the storage arrays. However the following trick can used after
+one has changed the striping as described above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mv file file.bu
+$ cp -a file.bu file
+$ rm file.bu
+</pre></div>
+</div>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag ensures that all permissions etc are preserved.</p>
+</section>
+<section id="management-of-many-small-files-10000">
+<h2>Management of many small files (&gt; 10000)<a class="headerlink" href="#management-of-many-small-files-10000" title="Permalink to this headline">¶</a></h2>
+<p>The file system on Stallo is designed to give good performance for large
+files. This have some impact if you have many small files.</p>
+<p>If you have thousands of files in one directory. Basic operations like
+‘ls’ becomes very slow, there is nothing to do about this. However
+directories containing many files may cause the backup of the data to
+fail. It is therefore highly recommended that if you want backup of the
+files you need to use ‘tar’ to create on archive file of the directory.</p>
+</section>
+<section id="compression-of-data">
+<span id="file-compression"></span><h2>Compression of data<a class="headerlink" href="#compression-of-data" title="Permalink to this headline">¶</a></h2>
+<p>Data which is not accessed frequently like results of finished projects
+should be compressed in order to reduce storage space.</p>
+<p>We recommend <code class="docutils literal notranslate"><span class="pre">xz</span></code> and <code class="docutils literal notranslate"><span class="pre">tar</span></code> to compress single files or whole folder
+structures. To compress a single file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xz file
+</pre></div>
+</div>
+<p>To decompress:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ xz --decompress file
+</pre></div>
+</div>
+<p>To create a archive multiple files or folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar cfJv archive.tar.xz files
+</pre></div>
+</div>
+<p>It is recommended to use the file suffix <code class="docutils literal notranslate"><span class="pre">.tar.xz</span></code> to make it clear
+that archive was compressed with <code class="docutils literal notranslate"><span class="pre">xz</span></code>.</p>
+<p>To extract a archive (use <code class="docutils literal notranslate"><span class="pre">-C</span> <span class="pre">folder</span></code> to extract the files in
+folder):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar xvf archive.tar.xz
+</pre></div>
+</div>
+</section>
+<section id="binary-data-and-endianness">
+<h2>Binary data and endianness<a class="headerlink" href="#binary-data-and-endianness" title="Permalink to this headline">¶</a></h2>
+<p>Stallo is like all desktop PCs a little endian computer.</p>
+<p>At the moment in NOTUR the only big endian machine is njord.hpc.ntnu.no
+so Fortran sequential unformatted files create on Njord cannot be read
+on Stallo.</p>
+<p>The best work around for this is to save your file in a portable file
+format like <a class="reference external" href="https://www.unidata.ucar.edu/software/netcdf/">netCDF</a> or
+<a class="reference external" href="https://www.hdfgroup.org/">HDF5</a>.</p>
+<p>Both formats are supported on stallo, but you have to load its modules
+to use them:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load netCDF
+</pre></div>
+</div>
+<p>Or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load HDF5
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, HPC Physics group - NTNU
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
